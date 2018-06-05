@@ -6,12 +6,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.SurahViewHolder>{
+public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.SurahViewHolder> {
+
+    OnItemClickListener mItemClickListener;
     private ArrayList<Surah> surahArrayList;
     private Context context;
 
@@ -40,6 +43,13 @@ public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.SurahViewHol
         holder.translateTextView.setText(surah.getNameTranslate());
         holder.arabicTextView.setText(surah.getNameArabic());
 
+        if (position % 2 == 0) {
+//            holder.row_surah.setBackgroundColor(ContextCompat.getColor(context, R.color.mushaf3));
+
+        } else {
+//            holder.row_surah.setBackgroundColor(ContextCompat.getColor(context, R.color.mushaf2));
+        }
+
     }
 
     @Override
@@ -55,13 +65,16 @@ public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.SurahViewHol
     }
 
     @Override
-    public int getItemCount()
-    {
+    public int getItemCount() {
         return surahArrayList.size();
     }
 
 
-    public class SurahViewHolder extends RecyclerView.ViewHolder
+    public void SetOnItemClickListener(final OnItemClickListener mItemClickListener) {
+        this.mItemClickListener = mItemClickListener;
+    }
+
+    public class SurahViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener//current clickListerner
     {
         public TextView translateTextView;
 
@@ -73,13 +86,21 @@ public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.SurahViewHol
         public SurahViewHolder(View view) {
             super(view);
             translateTextView = view.findViewById(R.id.translate_textView);
-            arabicTextView =  view.findViewById(R.id.arabic_textView);
+            arabicTextView = view.findViewById(R.id.arabic_textView);
             surah_idTextView = view.findViewById(R.id.surah_idTextView);
-            row_surah =  view.findViewById(R.id.row_surah);
+            row_surah = view.findViewById(R.id.row_surah);
+
+            view.setOnClickListener(this); //current clickListerner
+        }
+
+        @Override
+        public void onClick(View v) {
+            if (mItemClickListener != null) {
+                mItemClickListener.onItemClick(v, getLayoutPosition());
+            }
 
         }
 
     }
 
 }
-

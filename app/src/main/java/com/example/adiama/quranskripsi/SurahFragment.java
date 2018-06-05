@@ -46,8 +46,7 @@ public class SurahFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_surah, container, false);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_surah_view);
         surahAdapter = new SurahAdapter(surahArrayList, getActivity());
@@ -59,7 +58,7 @@ public class SurahFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-//set Adapter with Animation
+        //set Adapter with Animation
         //  SlideInLeftAnimationAdapter slideInLeftAnimationAdapter = new SlideInLeftAnimationAdapter(surahAdapter);
         //  slideInLeftAnimationAdapter.setInterpolator(new OvershootInterpolator());
         //  slideInLeftAnimationAdapter.setFirstOnly(false);
@@ -72,29 +71,27 @@ public class SurahFragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
-//        surahAdapter.SetOnItemClickListener(new OnItemClickListener() {
-//            @Override
-//            public void onItemClick(View v, int position) {
-//                Surah surah = (Surah) surahAdapter.getItem(position);
-//
-//                long surah_id = surah.getId(); //mRecyclerView.getAdapter().getItemId(position);
-//                long ayah_number = surah.getAyahNumber();
-//                String surah_name = surah.getNameTranslate();
-//
-//                Log.d("SurahFragment", "ID: " + surah_id + " Surah Name: " + surah_name);
-//
-//                Bundle dataBundle = new Bundle();
-//                dataBundle.putLong(SurahDataSource.SURAH_ID_TAG, surah_id);
-//                dataBundle.putLong(SurahDataSource.SURAH_AYAH_NUMBER, ayah_number);
-//                dataBundle.putString(SurahDataSource.SURAH_NAME_TRANSLATE, surah_name);
-//
-//                Intent intent = new Intent(getActivity(), AyahWordActivity.class);
-//                intent.putExtras(dataBundle);
-//                startActivity(intent);
-//
-//
-//            }
-//        });
+        surahAdapter.SetOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+                Surah surah = (Surah) surahAdapter.getItem(position);
+
+                long surah_id = surah.getId(); //mRecyclerView.getAdapter().getItemId(position);
+                long ayah_number = surah.getAyahNumber();
+                String surah_name = surah.getNameTranslate();
+
+                Log.d("SurahFragment", "ID: " + surah_id + " Surah Name: " + surah_name);
+
+                Bundle dataBundle = new Bundle();
+                dataBundle.putLong(SurahDataSource.SURAH_ID_TAG, surah_id);
+                dataBundle.putLong(SurahDataSource.SURAH_AYAH_NUMBER, ayah_number);
+                dataBundle.putString(SurahDataSource.SURAH_NAME_TRANSLATE, surah_name);
+
+                Intent intent = new Intent(getActivity(), AyahWordActivity.class);
+                intent.putExtras(dataBundle);
+                startActivity(intent);
+            }
+        });
 
        /* mRecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getActivity(), mRecyclerView, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
@@ -118,12 +115,7 @@ public class SurahFragment extends Fragment {
     private ArrayList<Surah> getSurahArrayList() {
         ArrayList<Surah> surahArrayList = new ArrayList<Surah>();
         SurahDataSource surahDataSource = new SurahDataSource(getActivity());
-
-
                 surahArrayList = surahDataSource.getEnglishSurahArrayList();
-
-
-
         return surahArrayList;
     }
 

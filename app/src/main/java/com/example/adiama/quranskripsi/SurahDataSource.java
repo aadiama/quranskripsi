@@ -31,7 +31,7 @@ public class SurahDataSource {
         ArrayList<Surah> surahArrayList = new ArrayList<>();
         SQLiteDatabase db = databaseHelper.getReadableDatabase();
         cursor = db.rawQuery("SELECT surah_name._id,surah_name.name_arabic," +
-                "surah_name.name_english,surah_name.ayah_number FROM surah_name", null);
+                "surah_name.name_english,surah_name.ayah_number FROM surah_name WHERE surah_no IN ('84','85') ", null);
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {

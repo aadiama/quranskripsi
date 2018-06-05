@@ -70,7 +70,6 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.listSurah) {
             MainActivity.this.getSupportFragmentManager().beginTransaction().replace(R.id.main_container, SurahFragment.newInstance()).commit();
-
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
