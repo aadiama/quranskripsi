@@ -1,0 +1,1226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000000"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/Title1"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginTop="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:text="Penanda Tilawah"
+                android:textAlignment="center"
+                android:textStyle="bold"></TextView>
+
+            <TableLayout
+                android:id="@+id/tableLayout1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:shrinkColumns="*"
+                android:stretchColumns="*"
+
+                >
+
+                <TableRow
+                    android:id="@+id/tableRow2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="3dp"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/textViewA0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center_horizontal"
+                        android:text="Ayat0-0"
+                        android:textAlignment="center"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/textViewA1"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center_horizontal"
+                        android:text="0"
+                        android:textAlignment="center"></TextView>
+
+                    <SeekBar
+                        android:id="@+id/seekbarTilawah1"
+                        android:layout_width="197dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white" />
+
+                    <Button
+                        android:id="@+id/buttonTilawah1"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="+"
+                        android:textColor="#ffffff" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp">
+
+                    <TextView
+                        android:id="@+id/textViewB0"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:text="Ayat0-0"
+                        android:textAlignment="center"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/textViewB1"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center_horizontal"
+                        android:text="0"
+                        android:textAlignment="center"></TextView>
+
+                    <SeekBar
+                        android:id="@+id/seekbarTilawah2"
+                        android:layout_width="197dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white" />
+
+                    <Button
+                        android:id="@+id/buttonTilawah2"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="+"
+                        android:textColor="#ffffff" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/textViewC0"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:text="TM1"
+                        android:textAlignment="center"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/textViewC1"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center_horizontal"
+                        android:text="0"
+                        android:textAlignment="center"></TextView>
+
+                    <SeekBar
+                        android:id="@+id/seekbarTilawah3"
+                        android:layout_width="197dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white" />
+
+                    <Button
+                        android:id="@+id/buttonTilawah3"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="+"
+                        android:textColor="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/textViewD0"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:text="Ayat0-0"
+                        android:textAlignment="center"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/textViewD1"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center_horizontal"
+                        android:text="0"
+                        android:textAlignment="center"></TextView>
+
+                    <SeekBar
+                        android:id="@+id/seekbarTilawah4"
+                        android:layout_width="197dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white" />
+
+                    <Button
+                        android:id="@+id/buttonTilawah4"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="+"
+                        android:textColor="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/textViewE0"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:text="Ayat0-0"
+                        android:textAlignment="center"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/textViewE1"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center_horizontal"
+                        android:text="0"
+                        android:textAlignment="center"></TextView>
+
+                    <SeekBar
+                        android:id="@+id/seekbarTilawah5"
+                        android:layout_width="197dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white" />
+
+                    <Button
+                        android:id="@+id/buttonTilawah5"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="+"
+                        android:textColor="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/textViewF0"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:text="TM2"
+                        android:textAlignment="center"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/textViewF1"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center_horizontal"
+                        android:text="0"
+                        android:textAlignment="center"></TextView>
+
+                    <SeekBar
+                        android:id="@+id/seekbarTilawah7"
+                        android:layout_width="197dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white" />
+
+                    <Button
+                        android:id="@+id/buttonTilawah7"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="+"
+                        android:textColor="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/textView80"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:text="TM1-2"
+                        android:textAlignment="center"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/textView81"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center_horizontal"
+                        android:text="0"
+                        android:textAlignment="center"></TextView>
+
+                    <SeekBar
+                        android:id="@+id/seekbarTilawah8"
+                        android:layout_width="197dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white" />
+
+                    <Button
+                        android:id="@+id/buttonTilawah8"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="+"
+                        android:textColor="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/textView90"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:text="Ayat0-0"
+                        android:textAlignment="center"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/textView91"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center_horizontal"
+                        android:text="0"
+                        android:textAlignment="center"></TextView>
+
+                    <SeekBar
+                        android:id="@+id/seekbarTilawah9"
+                        android:layout_width="197dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white" />
+
+                    <Button
+                        android:id="@+id/buttonTilawah9"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="+"
+                        android:textColor="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/textView100"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:text="Ayat0-0"
+                        android:textAlignment="center"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/textView101"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center_horizontal"
+                        android:text="0"
+                        android:textAlignment="center"></TextView>
+
+                    <SeekBar
+                        android:id="@+id/seekbarTilawah10"
+                        android:layout_width="197dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white" />
+
+                    <Button
+                        android:id="@+id/buttonTilawah10"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="+"
+                        android:textColor="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/textView110"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:text="TM3"
+                        android:textAlignment="center"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/textView111"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center_horizontal"
+                        android:text="0"
+                        android:textAlignment="center"></TextView>
+
+                    <SeekBar
+                        android:id="@+id/seekbarTilawah11"
+                        android:layout_width="197dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white" />
+
+                    <Button
+                        android:id="@+id/buttonTilawah11"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="+"
+                        android:textColor="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/textView120"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:text="TM2-3"
+                        android:textAlignment="center"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/textView121"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center_horizontal"
+                        android:text="0"
+                        android:textAlignment="center"></TextView>
+
+                    <SeekBar
+                        android:id="@+id/seekbarTilawah12"
+                        android:layout_width="197dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white" />
+
+                    <Button
+                        android:id="@+id/buttonTilawah12"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="+"
+                        android:textColor="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/textView130"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:text="TM1-3"
+                        android:textAlignment="center"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/textView131"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center_horizontal"
+                        android:text="0"
+                        android:textAlignment="center"></TextView>
+
+                    <SeekBar
+                        android:id="@+id/seekbarTilawah13"
+                        android:layout_width="197dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white" />
+
+                    <Button
+                        android:id="@+id/buttonTilawah13"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="+"
+                        android:textColor="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/textView140"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:text="Ayat0-0"
+                        android:textAlignment="center"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/textView141"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center_horizontal"
+                        android:text="0"
+                        android:textAlignment="center"></TextView>
+
+                    <SeekBar
+                        android:id="@+id/seekbarTilawah14"
+                        android:layout_width="197dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white" />
+
+                    <Button
+                        android:id="@+id/buttonTilawah14"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="+"
+                        android:textColor="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/textView150"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:text="Ayat0-0"
+                        android:textAlignment="center"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/textView151"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center_horizontal"
+                        android:text="0"
+                        android:textAlignment="center"></TextView>
+
+                    <SeekBar
+                        android:id="@+id/seekbarTilawah15"
+                        android:layout_width="197dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white" />
+
+                    <Button
+                        android:id="@+id/buttonTilawah15"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="+"
+                        android:textColor="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/textView160"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:text="TM4"
+                        android:textAlignment="center"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/textView161"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center_horizontal"
+                        android:text="0"
+                        android:textAlignment="center"></TextView>
+
+                    <SeekBar
+                        android:id="@+id/seekbarTilawah16"
+                        android:layout_width="197dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white" />
+
+                    <Button
+                        android:id="@+id/buttonTilawah16"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="+"
+                        android:textColor="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow17"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/textView170"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:text="TM3-4"
+                        android:textAlignment="center"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/textView171"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center_horizontal"
+                        android:text="0"
+                        android:textAlignment="center"></TextView>
+
+                    <SeekBar
+                        android:id="@+id/seekbarTilawah17"
+                        android:layout_width="197dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white" />
+
+                    <Button
+                        android:id="@+id/buttonTilawah17"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="+"
+                        android:textColor="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow18"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:text="TM2-4"
+                        android:textAlignment="center"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/textView188"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center_horizontal"
+                        android:text="0"
+                        android:textAlignment="center"></TextView>
+
+                    <SeekBar
+                        android:id="@+id/seekbarTilawah18"
+                        android:layout_width="197dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white" />
+
+                    <Button
+                        android:id="@+id/buttonTilawah18"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="+"
+                        android:textColor="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow19"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/textView190"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:text="TM1-4"
+                        android:textAlignment="center"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/textView191"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center_horizontal"
+                        android:text="0"
+                        android:textAlignment="center"></TextView>
+
+                    <SeekBar
+                        android:id="@+id/seekbarTilawah19"
+                        android:layout_width="197dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white" />
+
+                    <Button
+                        android:id="@+id/buttonTilawah19"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="+"
+                        android:textColor="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/textView200"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:text=""
+                        android:textAlignment="center"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/textView201"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center_horizontal"
+                        android:text="0"
+                        android:textAlignment="center"></TextView>
+
+                    <SeekBar
+                        android:id="@+id/seekbarTilawah20"
+                        android:layout_width="197dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white" />
+
+                    <Button
+                        android:id="@+id/buttonTilawah20"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="+"
+                        android:textColor="#ffffff" />
+                </TableRow>
+
+
+                <TableRow
+                    android:id="@+id/tableRow221"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/textView2210"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:text=""
+                        android:textAlignment="center"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/textView2211"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center_horizontal"
+                        android:text="0"
+                        android:textAlignment="center"></TextView>
+
+                    <SeekBar
+                        android:id="@+id/seekbarTilawah221"
+                        android:layout_width="197dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white" />
+
+                    <Button
+                        android:id="@+id/buttonTilawah221"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="+"
+                        android:textColor="#ffffff" />
+                </TableRow>
+
+            </TableLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+
+                ></RelativeLayout>
+
+
+            <Button
+                android:id="@+id/butonsave"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_gravity="right"
+                android:background="@color/colorPrimary"
+                android:text="SIMPAN"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

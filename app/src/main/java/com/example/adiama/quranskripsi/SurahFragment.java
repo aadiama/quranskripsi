@@ -89,6 +89,8 @@ public class SurahFragment extends Fragment {
 
                 Intent intent = new Intent(getActivity(), AyahWordActivity.class);
                 intent.putExtras(dataBundle);
+                intent.putExtra("surah_id",surah_id);
+                intent.putExtra("surah_name",surah_name);
                 startActivity(intent);
             }
         });
