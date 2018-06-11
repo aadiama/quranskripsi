@@ -66,6 +66,8 @@
 
             <ProgressBar
                 android:id="@+id/progressbarMR1"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:max="40"
                 android:layout_width="197dp"
                 android:layout_height="25dp"
                 android:layout_marginBottom="1dp"
@@ -122,6 +124,8 @@
                 android:background="#FFFFFF"></TextView>
             <ProgressBar
                 android:id="@+id/progressbarMR2"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:max="40"
                 android:layout_width="197dp"
                 android:layout_height="25dp"
                 android:layout_marginBottom="1dp"
@@ -178,6 +182,8 @@
                 android:background="#FFFFFF"></TextView>
             <ProgressBar
                 android:id="@+id/progressbarMR3"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:max="40"
                 android:layout_width="197dp"
                 android:layout_height="25dp"
                 android:layout_marginBottom="1dp"
@@ -232,6 +238,8 @@
                 android:background="#FFFFFF"></TextView>
             <ProgressBar
                 android:id="@+id/progressbarMR4"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:max="40"
                 android:layout_width="197dp"
                 android:layout_height="25dp"
                 android:layout_marginBottom="1dp"
