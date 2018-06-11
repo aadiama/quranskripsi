@@ -40,7 +40,7 @@
                 >
 
                 <TableRow
-                    android:id="@+id/tableRow2"
+                    android:id="@+id/rowTikrar1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
@@ -49,7 +49,7 @@
                     >
 
                     <TextView
-                        android:id="@+id/textViewA0"
+                        android:id="@+id/textTikrar1"
                         android:layout_width="wrap_content"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -63,7 +63,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/textViewA1"
+                        android:id="@+id/textPenandaTikrar1"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -76,7 +76,7 @@
                         android:textAlignment="center"></TextView>
 
                     <SeekBar
-                        android:id="@+id/seekbarTilawah1"
+                        android:id="@+id/seekbarTikrar1"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -86,7 +86,7 @@
                         android:background="@color/white" />
 
                     <Button
-                        android:id="@+id/buttonTilawah1"
+                        android:id="@+id/buttonTikrar1"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -101,13 +101,13 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/tableRow3"
+                    android:id="@+id/rowTikrar2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp">
 
                     <TextView
-                        android:id="@+id/textViewB0"
+                        android:id="@+id/textTikrar2"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -120,7 +120,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/textViewB1"
+                        android:id="@+id/textPenandaTikrar2"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -133,7 +133,7 @@
                         android:textAlignment="center"></TextView>
 
                     <SeekBar
-                        android:id="@+id/seekbarTilawah2"
+                        android:id="@+id/seekbarTikrar2"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -143,7 +143,7 @@
                         android:background="@color/white" />
 
                     <Button
-                        android:id="@+id/buttonTilawah2"
+                        android:id="@+id/buttonTikrar2"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -158,7 +158,7 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/tableRow4"
+                    android:id="@+id/rowTikrar3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
@@ -166,7 +166,7 @@
                     >
 
                     <TextView
-                        android:id="@+id/textViewC0"
+                        android:id="@+id/textTikrar3"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -179,7 +179,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/textViewC1"
+                        android:id="@+id/textPenandaTikrar3"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -192,7 +192,7 @@
                         android:textAlignment="center"></TextView>
 
                     <SeekBar
-                        android:id="@+id/seekbarTilawah3"
+                        android:id="@+id/seekbarTikrar3"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -202,7 +202,7 @@
                         android:background="@color/white" />
 
                     <Button
-                        android:id="@+id/buttonTilawah3"
+                        android:id="@+id/buttonTikrar3"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -216,7 +216,7 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/tableRow5"
+                    android:id="@+id/rowTikrar4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
@@ -224,7 +224,7 @@
                     >
 
                     <TextView
-                        android:id="@+id/textViewD0"
+                        android:id="@+id/textTikrar4"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -237,7 +237,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/textViewD1"
+                        android:id="@+id/textPenandaTikrar4"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -250,7 +250,7 @@
                         android:textAlignment="center"></TextView>
 
                     <SeekBar
-                        android:id="@+id/seekbarTilawah4"
+                        android:id="@+id/seekbarTikrar4"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -260,7 +260,7 @@
                         android:background="@color/white" />
 
                     <Button
-                        android:id="@+id/buttonTilawah4"
+                        android:id="@+id/buttonTikrar4"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -274,7 +274,7 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/tableRow6"
+                    android:id="@+id/rowTikrar5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
@@ -282,7 +282,7 @@
                     >
 
                     <TextView
-                        android:id="@+id/textViewE0"
+                        android:id="@+id/textTikrar5"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -295,7 +295,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/textViewE1"
+                        android:id="@+id/textPenandaTikrar5"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -308,7 +308,7 @@
                         android:textAlignment="center"></TextView>
 
                     <SeekBar
-                        android:id="@+id/seekbarTilawah5"
+                        android:id="@+id/seekbarTikrar5"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -318,7 +318,7 @@
                         android:background="@color/white" />
 
                     <Button
-                        android:id="@+id/buttonTilawah5"
+                        android:id="@+id/buttonTikrar5"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -332,7 +332,7 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/tableRow7"
+                    android:id="@+id/rowTikrar6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
@@ -340,7 +340,7 @@
                     >
 
                     <TextView
-                        android:id="@+id/textViewF0"
+                        android:id="@+id/textTikrar6"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -353,7 +353,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/textViewF1"
+                        android:id="@+id/textPenandaTikrar6"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -366,7 +366,7 @@
                         android:textAlignment="center"></TextView>
 
                     <SeekBar
-                        android:id="@+id/seekbarTilawah7"
+                        android:id="@+id/seekbarTikrar6"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -376,7 +376,7 @@
                         android:background="@color/white" />
 
                     <Button
-                        android:id="@+id/buttonTilawah7"
+                        android:id="@+id/buttonTikrar6"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -390,7 +390,7 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/tableRow8"
+                    android:id="@+id/rowTikrar7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
@@ -398,7 +398,7 @@
                     >
 
                     <TextView
-                        android:id="@+id/textView80"
+                        android:id="@+id/textTikrar7"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -411,7 +411,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/textView81"
+                        android:id="@+id/textPenandaTikrar7"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -424,7 +424,7 @@
                         android:textAlignment="center"></TextView>
 
                     <SeekBar
-                        android:id="@+id/seekbarTilawah8"
+                        android:id="@+id/seekbarTikrar7"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -434,7 +434,7 @@
                         android:background="@color/white" />
 
                     <Button
-                        android:id="@+id/buttonTilawah8"
+                        android:id="@+id/buttonTikrar7"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -448,7 +448,7 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/tableRow9"
+                    android:id="@+id/rowTikrar8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
@@ -456,7 +456,7 @@
                     >
 
                     <TextView
-                        android:id="@+id/textView90"
+                        android:id="@+id/textTikrar8"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -469,7 +469,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/textView91"
+                        android:id="@+id/textPenandaTikrar8"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -482,7 +482,7 @@
                         android:textAlignment="center"></TextView>
 
                     <SeekBar
-                        android:id="@+id/seekbarTilawah9"
+                        android:id="@+id/seekbarTikrar8"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -492,7 +492,7 @@
                         android:background="@color/white" />
 
                     <Button
-                        android:id="@+id/buttonTilawah9"
+                        android:id="@+id/buttonTikrar8"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -506,7 +506,7 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/tableRow10"
+                    android:id="@+id/rowTikrar9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
@@ -514,7 +514,7 @@
                     >
 
                     <TextView
-                        android:id="@+id/textView100"
+                        android:id="@+id/textTikrar9"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -527,7 +527,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/textView101"
+                        android:id="@+id/textPenandaTikrar9"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -540,7 +540,7 @@
                         android:textAlignment="center"></TextView>
 
                     <SeekBar
-                        android:id="@+id/seekbarTilawah10"
+                        android:id="@+id/seekbarTikrar9"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -550,7 +550,7 @@
                         android:background="@color/white" />
 
                     <Button
-                        android:id="@+id/buttonTilawah10"
+                        android:id="@+id/buttonTikrar9"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -564,7 +564,7 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/tableRow11"
+                    android:id="@+id/rowTikrar10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
@@ -572,7 +572,7 @@
                     >
 
                     <TextView
-                        android:id="@+id/textView110"
+                        android:id="@+id/textTikrar10"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -585,7 +585,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/textView111"
+                        android:id="@+id/textPenandaTikrar10"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -598,7 +598,7 @@
                         android:textAlignment="center"></TextView>
 
                     <SeekBar
-                        android:id="@+id/seekbarTilawah11"
+                        android:id="@+id/seekbarTikrar10"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -608,7 +608,7 @@
                         android:background="@color/white" />
 
                     <Button
-                        android:id="@+id/buttonTilawah11"
+                        android:id="@+id/buttonTikrar10"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -622,7 +622,7 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/tableRow12"
+                    android:id="@+id/rowTikrar11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
@@ -630,7 +630,7 @@
                     >
 
                     <TextView
-                        android:id="@+id/textView120"
+                        android:id="@+id/textTikrar11"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -643,7 +643,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/textView121"
+                        android:id="@+id/textPenandaTikrar11"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -656,7 +656,7 @@
                         android:textAlignment="center"></TextView>
 
                     <SeekBar
-                        android:id="@+id/seekbarTilawah12"
+                        android:id="@+id/seekbarTikrar11"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -666,7 +666,7 @@
                         android:background="@color/white" />
 
                     <Button
-                        android:id="@+id/buttonTilawah12"
+                        android:id="@+id/buttonTikrar11"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -680,7 +680,7 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/tableRow13"
+                    android:id="@+id/rowTikrar12"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
@@ -688,7 +688,7 @@
                     >
 
                     <TextView
-                        android:id="@+id/textView130"
+                        android:id="@+id/textTikrar12"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -701,7 +701,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/textView131"
+                        android:id="@+id/textPenandaTikrar12"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -714,7 +714,7 @@
                         android:textAlignment="center"></TextView>
 
                     <SeekBar
-                        android:id="@+id/seekbarTilawah13"
+                        android:id="@+id/seekbarTikrar12"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -724,7 +724,7 @@
                         android:background="@color/white" />
 
                     <Button
-                        android:id="@+id/buttonTilawah13"
+                        android:id="@+id/buttonTikrar12"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -738,7 +738,7 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/tableRow14"
+                    android:id="@+id/rowTikrar13"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
@@ -746,7 +746,7 @@
                     >
 
                     <TextView
-                        android:id="@+id/textView140"
+                        android:id="@+id/textTikrar13"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -759,7 +759,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/textView141"
+                        android:id="@+id/textPenandaTikrar13"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -772,7 +772,7 @@
                         android:textAlignment="center"></TextView>
 
                     <SeekBar
-                        android:id="@+id/seekbarTilawah14"
+                        android:id="@+id/seekbarTikrar13"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -782,7 +782,7 @@
                         android:background="@color/white" />
 
                     <Button
-                        android:id="@+id/buttonTilawah14"
+                        android:id="@+id/buttonTikrar13"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -796,7 +796,7 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/tableRow15"
+                    android:id="@+id/rowTikrar14"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
@@ -804,7 +804,7 @@
                     >
 
                     <TextView
-                        android:id="@+id/textView150"
+                        android:id="@+id/textTikrar14"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -817,7 +817,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/textView151"
+                        android:id="@+id/textPenandaTikrar14"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -830,7 +830,7 @@
                         android:textAlignment="center"></TextView>
 
                     <SeekBar
-                        android:id="@+id/seekbarTilawah15"
+                        android:id="@+id/seekbarTikrar14"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -840,7 +840,7 @@
                         android:background="@color/white" />
 
                     <Button
-                        android:id="@+id/buttonTilawah15"
+                        android:id="@+id/buttonTikrar14"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -854,7 +854,7 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/tableRow16"
+                    android:id="@+id/rowTikrar15"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
@@ -862,7 +862,7 @@
                     >
 
                     <TextView
-                        android:id="@+id/textView160"
+                        android:id="@+id/textTikrar15"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -875,7 +875,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/textView161"
+                        android:id="@+id/textPenandaTikrar15"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -888,7 +888,7 @@
                         android:textAlignment="center"></TextView>
 
                     <SeekBar
-                        android:id="@+id/seekbarTilawah16"
+                        android:id="@+id/seekbarTikrar15"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -898,7 +898,7 @@
                         android:background="@color/white" />
 
                     <Button
-                        android:id="@+id/buttonTilawah16"
+                        android:id="@+id/buttonTikrar15"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -912,7 +912,7 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/tableRow17"
+                    android:id="@+id/rowTikrar16"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
@@ -920,7 +920,7 @@
                     >
 
                     <TextView
-                        android:id="@+id/textView170"
+                        android:id="@+id/textTikrar16"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -933,7 +933,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/textView171"
+                        android:id="@+id/textPenandaTikrar16"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -946,7 +946,7 @@
                         android:textAlignment="center"></TextView>
 
                     <SeekBar
-                        android:id="@+id/seekbarTilawah17"
+                        android:id="@+id/seekbarTikrar16"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -956,7 +956,7 @@
                         android:background="@color/white" />
 
                     <Button
-                        android:id="@+id/buttonTilawah17"
+                        android:id="@+id/buttonTikrar16"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -970,7 +970,7 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/tableRow18"
+                    android:id="@+id/rowTikrar17"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
@@ -978,7 +978,7 @@
                     >
 
                     <TextView
-                        android:id="@+id/textView18"
+                        android:id="@+id/textTikrar17"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -991,7 +991,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/textView188"
+                        android:id="@+id/textPenandaTikrar17"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -1004,7 +1004,7 @@
                         android:textAlignment="center"></TextView>
 
                     <SeekBar
-                        android:id="@+id/seekbarTilawah18"
+                        android:id="@+id/seekbarTikrar17"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -1014,7 +1014,7 @@
                         android:background="@color/white" />
 
                     <Button
-                        android:id="@+id/buttonTilawah18"
+                        android:id="@+id/buttonTikrar17"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -1028,7 +1028,7 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/tableRow19"
+                    android:id="@+id/rowTikrar18"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
@@ -1036,7 +1036,7 @@
                     >
 
                     <TextView
-                        android:id="@+id/textView190"
+                        android:id="@+id/textTikrar18"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -1049,7 +1049,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/textView191"
+                        android:id="@+id/textPenandaTikrar18"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -1062,7 +1062,7 @@
                         android:textAlignment="center"></TextView>
 
                     <SeekBar
-                        android:id="@+id/seekbarTilawah19"
+                        android:id="@+id/seekbarTikrar18"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -1072,7 +1072,7 @@
                         android:background="@color/white" />
 
                     <Button
-                        android:id="@+id/buttonTilawah19"
+                        android:id="@+id/buttonTikrar18"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -1086,7 +1086,7 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/tableRow20"
+                    android:id="@+id/rowTikrar19"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
@@ -1094,7 +1094,7 @@
                     >
 
                     <TextView
-                        android:id="@+id/textView200"
+                        android:id="@+id/textTikrar19"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -1107,7 +1107,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/textView201"
+                        android:id="@+id/textPenandaTikrar19"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -1120,7 +1120,7 @@
                         android:textAlignment="center"></TextView>
 
                     <SeekBar
-                        android:id="@+id/seekbarTilawah20"
+                        android:id="@+id/seekbarTikrar19"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -1130,7 +1130,7 @@
                         android:background="@color/white" />
 
                     <Button
-                        android:id="@+id/buttonTilawah20"
+                        android:id="@+id/buttonTikrar19"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -1145,7 +1145,7 @@
 
 
                 <TableRow
-                    android:id="@+id/tableRow221"
+                    android:id="@+id/rowTikrar20"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
@@ -1153,7 +1153,7 @@
                     >
 
                     <TextView
-                        android:id="@+id/textView2210"
+                        android:id="@+id/textTikrar20"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -1166,7 +1166,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/textView2211"
+                        android:id="@+id/textPenandaTikrar20"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -1179,7 +1179,7 @@
                         android:textAlignment="center"></TextView>
 
                     <SeekBar
-                        android:id="@+id/seekbarTilawah221"
+                        android:id="@+id/seekbarTikrar20"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -1189,7 +1189,7 @@
                         android:background="@color/white" />
 
                     <Button
-                        android:id="@+id/buttonTilawah221"
+                        android:id="@+id/buttonTikrar20"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
