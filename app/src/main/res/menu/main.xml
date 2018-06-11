@@ -4,16 +4,16 @@
     <item
         android:id="@+id/a"
         android:orderInCategory="1"
-        android:title="A"
+        android:title="TL"
         app:showAsAction="always" />
     <item
         android:id="@+id/b"
         android:orderInCategory="2"
-        android:title="B"
+        android:title="TM"
         app:showAsAction="always" />
     <item
         android:id="@+id/c"
         android:orderInCategory="3"
-        android:title="C"
+        android:title="MR"
         app:showAsAction="always" />
 </menu>

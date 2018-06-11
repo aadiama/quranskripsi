@@ -64,8 +64,8 @@
                 android:layout_marginRight="1dp"
                 android:background="#FFFFFF"></TextView>
 
-            <SeekBar
-                android:id="@+id/seekbarMR1"
+            <ProgressBar
+                android:id="@+id/progressbarMR1"
                 android:layout_width="197dp"
                 android:layout_height="25dp"
                 android:layout_marginBottom="1dp"
@@ -120,8 +120,8 @@
                 android:layout_marginLeft="1dp"
                 android:layout_marginRight="1dp"
                 android:background="#FFFFFF"></TextView>
-            <SeekBar
-                android:id="@+id/seekbarMR2"
+            <ProgressBar
+                android:id="@+id/progressbarMR2"
                 android:layout_width="197dp"
                 android:layout_height="25dp"
                 android:layout_marginBottom="1dp"
@@ -176,8 +176,8 @@
                 android:layout_marginLeft="1dp"
                 android:layout_marginRight="1dp"
                 android:background="#FFFFFF"></TextView>
-            <SeekBar
-                android:id="@+id/seekbarMR3"
+            <ProgressBar
+                android:id="@+id/progressbarMR3"
                 android:layout_width="197dp"
                 android:layout_height="25dp"
                 android:layout_marginBottom="1dp"
@@ -230,8 +230,8 @@
                 android:layout_marginLeft="1dp"
                 android:layout_marginRight="1dp"
                 android:background="#FFFFFF"></TextView>
-            <SeekBar
-                android:id="@+id/seekbarMR4"
+            <ProgressBar
+                android:id="@+id/progressbarMR4"
                 android:layout_width="197dp"
                 android:layout_height="25dp"
                 android:layout_marginBottom="1dp"

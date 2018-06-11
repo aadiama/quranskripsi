@@ -75,8 +75,8 @@
                         android:text="0"
                         android:textAlignment="center"></TextView>
 
-                    <SeekBar
-                        android:id="@+id/seekbarTikrar1"
+                    <ProgressBar
+                        android:id="@+id/progressbarTikrar1"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -132,8 +132,8 @@
                         android:text="0"
                         android:textAlignment="center"></TextView>
 
-                    <SeekBar
-                        android:id="@+id/seekbarTikrar2"
+                    <ProgressBar
+                        android:id="@+id/progressbarTikrar2"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -191,8 +191,8 @@
                         android:text="0"
                         android:textAlignment="center"></TextView>
 
-                    <SeekBar
-                        android:id="@+id/seekbarTikrar3"
+                    <ProgressBar
+                        android:id="@+id/progressbarTikrar3"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -249,8 +249,8 @@
                         android:text="0"
                         android:textAlignment="center"></TextView>
 
-                    <SeekBar
-                        android:id="@+id/seekbarTikrar4"
+                    <ProgressBar
+                        android:id="@+id/progressbarTikrar4"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -307,8 +307,8 @@
                         android:text="0"
                         android:textAlignment="center"></TextView>
 
-                    <SeekBar
-                        android:id="@+id/seekbarTikrar5"
+                    <ProgressBar
+                        android:id="@+id/progressbarTikrar5"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -365,8 +365,8 @@
                         android:text="0"
                         android:textAlignment="center"></TextView>
 
-                    <SeekBar
-                        android:id="@+id/seekbarTikrar6"
+                    <ProgressBar
+                        android:id="@+id/progressbarTikrar6"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -423,8 +423,8 @@
                         android:text="0"
                         android:textAlignment="center"></TextView>
 
-                    <SeekBar
-                        android:id="@+id/seekbarTikrar7"
+                    <ProgressBar
+                        android:id="@+id/progressbarTikrar7"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -481,8 +481,8 @@
                         android:text="0"
                         android:textAlignment="center"></TextView>
 
-                    <SeekBar
-                        android:id="@+id/seekbarTikrar8"
+                    <ProgressBar
+                        android:id="@+id/progressbarTikrar8"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -539,8 +539,8 @@
                         android:text="0"
                         android:textAlignment="center"></TextView>
 
-                    <SeekBar
-                        android:id="@+id/seekbarTikrar9"
+                    <ProgressBar
+                        android:id="@+id/progressbarTikrar9"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -597,8 +597,8 @@
                         android:text="0"
                         android:textAlignment="center"></TextView>
 
-                    <SeekBar
-                        android:id="@+id/seekbarTikrar10"
+                    <ProgressBar
+                        android:id="@+id/progressbarTikrar10"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -655,8 +655,8 @@
                         android:text="0"
                         android:textAlignment="center"></TextView>
 
-                    <SeekBar
-                        android:id="@+id/seekbarTikrar11"
+                    <ProgressBar
+                        android:id="@+id/progressbarTikrar11"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -713,8 +713,8 @@
                         android:text="0"
                         android:textAlignment="center"></TextView>
 
-                    <SeekBar
-                        android:id="@+id/seekbarTikrar12"
+                    <ProgressBar
+                        android:id="@+id/progressbarTikrar12"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -771,8 +771,8 @@
                         android:text="0"
                         android:textAlignment="center"></TextView>
 
-                    <SeekBar
-                        android:id="@+id/seekbarTikrar13"
+                    <ProgressBar
+                        android:id="@+id/progressbarTikrar13"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -829,8 +829,8 @@
                         android:text="0"
                         android:textAlignment="center"></TextView>
 
-                    <SeekBar
-                        android:id="@+id/seekbarTikrar14"
+                    <ProgressBar
+                        android:id="@+id/progressbarTikrar14"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -887,8 +887,8 @@
                         android:text="0"
                         android:textAlignment="center"></TextView>
 
-                    <SeekBar
-                        android:id="@+id/seekbarTikrar15"
+                    <ProgressBar
+                        android:id="@+id/progressbarTikrar15"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -945,8 +945,8 @@
                         android:text="0"
                         android:textAlignment="center"></TextView>
 
-                    <SeekBar
-                        android:id="@+id/seekbarTikrar16"
+                    <ProgressBar
+                        android:id="@+id/progressbarTikrar16"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -1003,8 +1003,8 @@
                         android:text="0"
                         android:textAlignment="center"></TextView>
 
-                    <SeekBar
-                        android:id="@+id/seekbarTikrar17"
+                    <ProgressBar
+                        android:id="@+id/progressbarTikrar17"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -1061,8 +1061,8 @@
                         android:text="0"
                         android:textAlignment="center"></TextView>
 
-                    <SeekBar
-                        android:id="@+id/seekbarTikrar18"
+                    <ProgressBar
+                        android:id="@+id/progressbarTikrar18"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -1119,8 +1119,8 @@
                         android:text="0"
                         android:textAlignment="center"></TextView>
 
-                    <SeekBar
-                        android:id="@+id/seekbarTikrar19"
+                    <ProgressBar
+                        android:id="@+id/progressbarTikrar19"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
@@ -1178,8 +1178,8 @@
                         android:text="0"
                         android:textAlignment="center"></TextView>
 
-                    <SeekBar
-                        android:id="@+id/seekbarTikrar20"
+                    <ProgressBar
+                        android:id="@+id/progressbarTikrar20"
                         android:layout_width="197dp"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
