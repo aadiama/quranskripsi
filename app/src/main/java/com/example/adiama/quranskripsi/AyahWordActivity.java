@@ -202,11 +202,11 @@ public class AyahWordActivity extends AppCompatActivity {
         Button tonsave = (Button) dia.findViewById(R.id.butonsave);
         dbHelper = new DatabaseHelper(this);
 
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
-//        cursor = db.rawQuery("SELECT * FROM kebutuhannutrisi WHERE nama = '" + jenis + "'", null);
-        for (int i = 0; i < cursor.getCount(); i++) {
-
-        }
+//        SQLiteDatabase db = dbHelper.getReadableDatabase();
+////        cursor = db.rawQuery("SELECT * FROM kebutuhannutrisi WHERE nama = '" + jenis + "'", null);
+//        for (int i = 0; i < cursor.getCount(); i++) {
+//
+//        }
             val1 = 21;
             geseran1.setProgress(val1);
             text1.setText(String.valueOf(val1));
