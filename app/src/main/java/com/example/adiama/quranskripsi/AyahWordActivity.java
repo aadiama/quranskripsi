@@ -103,6 +103,7 @@ public class AyahWordActivity extends AppCompatActivity {
         html =  "<!DOCTYPE html>" +
                 "<html>" +
                 "<head>" +
+                "<style>@font-face {font-family: 'Roboto'; src: url('file:///android_asset/Roboto-Regular.ttf');}</style>" +
                 "<title>" +
                 "</title>" +
                 "<link href='main.css' rel='stylesheet' type='text/css' />"+
@@ -122,6 +123,7 @@ public class AyahWordActivity extends AppCompatActivity {
         html =  "<!DOCTYPE html>" +
                 "<html>" +
                 "<head>" +
+                "<style>@font-face {font-family: 'Roboto'; src: url('file:///android_asset/Roboto-Regular.ttf');}</style>" +
                 "<title>" +
                 "</title>" +
                 "<link href='main.css' rel='stylesheet' type='text/css' />"+
