@@ -89,6 +89,7 @@
 
                     <Button
                         android:id="@+id/buttonTikrar1"
+                        android:onClick="addPenandaTL"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -148,6 +149,7 @@
 
                     <Button
                         android:id="@+id/buttonTikrar2"
+                        android:onClick="addPenandaTL"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -209,6 +211,7 @@
 
                     <Button
                         android:id="@+id/buttonTikrar3"
+                        android:onClick="addPenandaTL"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -269,6 +272,7 @@
 
                     <Button
                         android:id="@+id/buttonTikrar4"
+                        android:onClick="addPenandaTL"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -329,6 +333,7 @@
 
                     <Button
                         android:id="@+id/buttonTikrar5"
+                        android:onClick="addPenandaTL"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -389,6 +394,7 @@
 
                     <Button
                         android:id="@+id/buttonTikrar6"
+                        android:onClick="addPenandaTL"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -449,6 +455,7 @@
 
                     <Button
                         android:id="@+id/buttonTikrar7"
+                        android:onClick="addPenandaTL"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -509,6 +516,7 @@
 
                     <Button
                         android:id="@+id/buttonTikrar8"
+                        android:onClick="addPenandaTL"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -569,6 +577,7 @@
 
                     <Button
                         android:id="@+id/buttonTikrar9"
+                        android:onClick="addPenandaTL"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -629,6 +638,7 @@
 
                     <Button
                         android:id="@+id/buttonTikrar10"
+                        android:onClick="addPenandaTL"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -689,6 +699,7 @@
 
                     <Button
                         android:id="@+id/buttonTikrar11"
+                        android:onClick="addPenandaTL"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -749,6 +760,7 @@
 
                     <Button
                         android:id="@+id/buttonTikrar12"
+                        android:onClick="addPenandaTL"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -809,6 +821,7 @@
 
                     <Button
                         android:id="@+id/buttonTikrar13"
+                        android:onClick="addPenandaTL"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -869,6 +882,7 @@
 
                     <Button
                         android:id="@+id/buttonTikrar14"
+                        android:onClick="addPenandaTL"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -928,6 +942,7 @@
 
                     <Button
                         android:id="@+id/buttonTikrar15"
+                        android:onClick="addPenandaTL"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -988,6 +1003,7 @@
 
                     <Button
                         android:id="@+id/buttonTikrar16"
+                        android:onClick="addPenandaTL"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -1048,6 +1064,7 @@
 
                     <Button
                         android:id="@+id/buttonTikrar17"
+                        android:onClick="addPenandaTL"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -1108,6 +1125,7 @@
 
                     <Button
                         android:id="@+id/buttonTikrar18"
+                        android:onClick="addPenandaTL"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -1168,6 +1186,7 @@
 
                     <Button
                         android:id="@+id/buttonTikrar19"
+                        android:onClick="addPenandaTL"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -1229,6 +1248,7 @@
 
                     <Button
                         android:id="@+id/buttonTikrar20"
+                        android:onClick="addPenandaTL"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"

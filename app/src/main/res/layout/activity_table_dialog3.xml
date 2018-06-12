@@ -78,6 +78,7 @@
 
             <Button
                 android:id="@+id/buttonMR1"
+                android:onClick="addPenandaTL"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_gravity="right"
@@ -136,6 +137,7 @@
 
             <Button
                 android:id="@+id/buttonMR2"
+                android:onClick="addPenandaTL"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_gravity="right"
@@ -193,6 +195,7 @@
                 android:background="@color/white" />
             <Button
                 android:id="@+id/buttonMR3"
+                android:onClick="addPenandaTL"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_gravity="right"
@@ -249,6 +252,7 @@
                 android:background="@color/white" />
             <Button
                 android:id="@+id/buttonMR4"
+                android:onClick="addPenandaTL"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_gravity="right"

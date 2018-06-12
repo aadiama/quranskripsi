@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.View;
 import android.view.WindowManager;
@@ -23,6 +24,7 @@ import android.content.SharedPreferences;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -195,48 +197,48 @@ public class AyahWordActivity extends AppCompatActivity {
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
         dia.show();
         dia.getWindow().setAttributes(lp);
-// surat no, tipe
-        Button ton1 = (Button) dia.findViewById(R.id.buttonTL1);
-        final ProgressBar geseran1 = (ProgressBar) dia.findViewById(R.id.progressbarTL1);
-        final TextView text1 = (TextView) dia.findViewById(R.id.textPenandaTL1);
 
-
-        Button tonsave = (Button) dia.findViewById(R.id.butonsave);
-        dbHelper = new DatabaseHelper(this);
-
-//        SQLiteDatabase db = dbHelper.getReadableDatabase();
-////        cursor = db.rawQuery("SELECT * FROM kebutuhannutrisi WHERE nama = '" + jenis + "'", null);
-//        for (int i = 0; i < cursor.getCount(); i++) {
+//        Button ton1 = (Button) dia.findViewById(R.id.buttonTL1);
+//        final ProgressBar geseran1 = (ProgressBar) dia.findViewById(R.id.progressbarTL1);
+//        final TextView text1 = (TextView) dia.findViewById(R.id.textPenandaTL1);
 //
-//        }
-            val1 = 21;
-            geseran1.setProgress(val1);
-            text1.setText(String.valueOf(val1));
-
-            ton1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View arg0) {
-                    // TODO Auto-generated method stub
-                    increaseloop(val1, geseran1, text1);
-                }
-            });
-
-            tonsave.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    SQLiteDatabase db = dbHelper.getWritableDatabase();
-                    db.execSQL("insert into penanda_hafalan(surah_no, penanda_type, row_index, value) values('" +
-                            surah_id + "','" +//surah_no
-                            "TL" + "','" +//penanda_type (TL,TM,MR)
-                            1 + "','" +//row_index
-                            text1.getText().toString() + "')");//value
-                    Toast.makeText(getApplicationContext(), "Berhasil", Toast.LENGTH_LONG).show();
-                }
-            });
+//
+//        Button tonsave = (Button) dia.findViewById(R.id.butonsave);
+//        dbHelper = new DatabaseHelper(this);
+//
+////        SQLiteDatabase db = dbHelper.getReadableDatabase();
+//////        cursor = db.rawQuery("SELECT * FROM kebutuhannutrisi WHERE nama = '" + jenis + "'", null);
+////        for (int i = 0; i < cursor.getCount(); i++) {
+////
+////        }
+//            val1 = 21;
+//            geseran1.setProgress(val1);
+//            text1.setText(String.valueOf(val1));
+//
+//            ton1.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View arg0) {
+//                    // TODO Auto-generated method stub
+//                    increaseloop(val1, geseran1, text1);
+//                }
+//            });
+//
+//            tonsave.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    SQLiteDatabase db = dbHelper.getWritableDatabase();
+//                    db.execSQL("insert into penanda_hafalan(surah_no, penanda_type, row_index, value) values('" +
+//                            surah_id + "','" +//surah_no
+//                            "TL" + "','" +//penanda_type (TL,TM,MR)
+//                            1 + "','" +//row_index
+//                            text1.getText().toString() + "')");//value
+//                    Toast.makeText(getApplicationContext(), "Berhasil", Toast.LENGTH_LONG).show();
+//                }
+//            });
         }
 
 
-    public void increaseloop(int val, ProgressBar  geseran, TextView text){
+    public void increaseloop(int val, ProgressBar geseran, TextView text){
         if(val1 < 40){
             val1++;
             Log.d("Loop per click :", String.valueOf(val1));
@@ -338,6 +340,31 @@ public class AyahWordActivity extends AppCompatActivity {
             }
         });
         alert.show();
+    }
+
+    public void addPenandaTL(View v) {
+        int buttonId = v.getId();
+        String buttonName = getResources().getResourceEntryName(buttonId);
+
+        ViewGroup container = (ViewGroup) v.getParent();
+
+        View textPenandaTL = container.getChildAt(container.indexOfChild(v)-2);
+        int textPenandaTLId = textPenandaTL.getId();
+        String textPenandaTLName = getResources().getResourceEntryName(textPenandaTLId);
+
+        View progressPenandaTL = container.getChildAt(container.indexOfChild(v)-1);
+        int progressPenandaTLId = progressPenandaTL.getId();
+        String progressPenandaTLName = getResources().getResourceEntryName(progressPenandaTLId);
+
+        final TextView penandaTL = (TextView) dia.findViewById(textPenandaTLId);
+        int penandaTLLastValue = Integer.parseInt(String.valueOf(penandaTL.getText()));
+        penandaTLLastValue = (penandaTLLastValue < 40 ? penandaTLLastValue+1 : 40);
+        penandaTL.setText(String.valueOf(penandaTLLastValue));
+
+        final ProgressBar progressTL = (ProgressBar) dia.findViewById(progressPenandaTLId);
+        int progressTLLastValue = progressTL.getProgress();
+        progressTLLastValue = (progressTLLastValue < 40 ? progressTLLastValue+1 : 40);
+        progressTL.setProgress(progressTLLastValue);
     }
 
     private ArrayList<Ayah> getAyahArrayList(String surah_id) {
