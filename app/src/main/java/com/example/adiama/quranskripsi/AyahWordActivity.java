@@ -1,12 +1,15 @@
 package com.example.adiama.quranskripsi;
 
 import android.app.Dialog;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
 import android.webkit.WebView;
 import java.util.ArrayList;
@@ -14,12 +17,20 @@ import java.util.Arrays;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class AyahWordActivity extends AppCompatActivity {
     private ArrayList<Ayah> ayahArrayList;
     private ArrayList<QuranMaqtha> maqthaArrayList;
 
     Dialog dia;
+    int val1 = 0;
+    Long surah_id;
+    DatabaseHelper dbHelper;
+    protected Cursor cursor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +39,7 @@ public class AyahWordActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         String title = bundle.getString("surah_name");
-        Long surah_id = bundle.getLong("surah_id");
+        surah_id = bundle.getLong("surah_id");
         setTitle(title);
 
         ayahArrayList = getAyahArrayList(String.valueOf(surah_id));
@@ -130,6 +141,54 @@ public class AyahWordActivity extends AppCompatActivity {
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
         dia.show();
         dia.getWindow().setAttributes(lp);
+// surat no, tipe
+        Button ton1 = (Button) dia.findViewById(R.id.buttonTL1);
+        final ProgressBar geseran1 = (ProgressBar) dia.findViewById(R.id.progressbarTL1);
+        final TextView text1 = (TextView) dia.findViewById(R.id.textPenandaTL1);
+
+
+        Button tonsave = (Button) dia.findViewById(R.id.butonsave);
+        dbHelper = new DatabaseHelper(this);
+
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+//        cursor = db.rawQuery("SELECT * FROM kebutuhannutrisi WHERE nama = '" + jenis + "'", null);
+        for (int i = 0; i < cursor.getCount(); i++) {
+
+        }
+            val1 = 21;
+            geseran1.setProgress(val1);
+            text1.setText(String.valueOf(val1));
+
+            ton1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View arg0) {
+                    // TODO Auto-generated method stub
+                    increaseloop(val1, geseran1, text1);
+                }
+            });
+
+            tonsave.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    SQLiteDatabase db = dbHelper.getWritableDatabase();
+                    db.execSQL("insert into penanda_hafalan(surah_no, penanda_type, row_index, value) values('" +
+                            surah_id + "','" +//surah_no
+                            "TL" + "','" +//penanda_type (TL,TM,MR)
+                            1 + "','" +//row_index
+                            text1.getText().toString() + "')");//value
+                    Toast.makeText(getApplicationContext(), "Berhasil", Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+
+
+    public void increaseloop(int val, ProgressBar  geseran, TextView text){
+        if(val1 < 40){
+            val1++;
+            Log.d("Loop per click :", String.valueOf(val1));
+            geseran.setProgress(val1);
+            text.setText(String.valueOf(val1));
+        }
     }
 
     public void showDialogB() {
