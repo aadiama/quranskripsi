@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#000000"
+    android:id="@+id/layoutMR"
     >
 
     <TextView
@@ -22,7 +23,7 @@
         android:textStyle="bold"></TextView>
 
     <TableLayout
-        android:id="@+id/tableLayout1"
+        android:id="@+id/tableLayoutMR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:shrinkColumns="*"
@@ -277,7 +278,8 @@
 
 
     <Button
-        android:id="@+id/butonsave"
+        android:id="@+id/butonSaveMR"
+        android:onClick="saveFunction"
         android:layout_width="match_parent"
         android:layout_height="41dp"
         android:layout_gravity="right"

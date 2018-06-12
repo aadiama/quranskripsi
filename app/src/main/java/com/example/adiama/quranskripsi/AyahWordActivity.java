@@ -1,7 +1,9 @@
 package com.example.adiama.quranskripsi;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -9,6 +11,7 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
@@ -18,12 +21,16 @@ import android.view.WindowManager;
 import android.webkit.WebView;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Map;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,10 +42,6 @@ public class AyahWordActivity extends AppCompatActivity {
     public Long surah_no;
 
     Dialog dia;
-    int val1 = 0;
-    Long surah_id;
-    DatabaseHelper dbHelper;
-    protected Cursor cursor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +50,7 @@ public class AyahWordActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         String title = bundle.getString("surah_name");
-        title = title.replace("Surah ","");
+        title = title.replace("Surah ", "");
 
         Long surah_id = bundle.getLong("surah_id");
         surah_no = surah_id;
@@ -60,30 +63,30 @@ public class AyahWordActivity extends AppCompatActivity {
         String myData = "";
 
         Integer tikrarNo = 1;
-        for(Ayah currentX : ayahArrayList) {
+        for (Ayah currentX : ayahArrayList) {
             Long curSurahId = currentX.getSurahId();
             Long curAyahNo = currentX.getAyahNo();
             String strAyahNo = String.valueOf(curAyahNo);
             strAyahNo = arabicNumber(strAyahNo);
-            strAyahNo = "("+String.valueOf(strAyahNo)+")";
+            strAyahNo = "(" + String.valueOf(strAyahNo) + ")";
             String theAyah = currentX.getAyahArabic();
 
             Long[] blueArray = new Long[50];
             Integer tIndex = 0;
             Integer lastTikrarAyah = 1;
 
-            for(QuranMaqtha tMaqtha : maqthaArrayList){
+            for (QuranMaqtha tMaqtha : maqthaArrayList) {
                 Long mSurahId = tMaqtha.getSurahId();
                 Long mAyahNo = tMaqtha.getAyahNo();
                 String theMaqtha = tMaqtha.getMaqthaArabic();
-                Integer mTikrar = (int)(long)tMaqtha.getTikrar();
+                Integer mTikrar = (int) (long) tMaqtha.getTikrar();
 
-                if(curSurahId == mSurahId && curAyahNo == mAyahNo && theAyah.startsWith(theMaqtha)){
-                    String textReplace = "<span style='color: blue'>"+theMaqtha+"</span>";
-                    theAyah = theAyah.replace(theMaqtha,textReplace);
+                if (curSurahId == mSurahId && curAyahNo == mAyahNo && theAyah.startsWith(theMaqtha)) {
+                    String textReplace = "<span style='color: blue'>" + theMaqtha + "</span>";
+                    theAyah = theAyah.replace(theMaqtha, textReplace);
 
-                    if(tIndex > 0 && tikrarNo != mTikrar){
-                        lastTikrarAyah = ((int)(long)mAyahNo) - 1;
+                    if (tIndex > 0 && tikrarNo != mTikrar) {
+                        lastTikrarAyah = ((int) (long) mAyahNo) - 1;
                         tikrarNo++;
                     }
 
@@ -93,69 +96,68 @@ public class AyahWordActivity extends AppCompatActivity {
                 tIndex++;
             }
 
-            if(tikrarNo == 1 || tikrarNo == 3){
-                strAyahNo = "<span style='background-color: rgb(200, 225, 255, 0.5)'>"+strAyahNo+"</span>";
-                theAyah = "<span style='background-color: rgb(200, 225, 255, 0.5)'>"+theAyah+"</span>";
+            if (tikrarNo == 1 || tikrarNo == 3) {
+                strAyahNo = "<span style='background-color: rgb(200, 225, 255, 0.5)'>" + strAyahNo + "</span>";
+                theAyah = "<span style='background-color: rgb(200, 225, 255, 0.5)'>" + theAyah + "</span>";
             }
 
-            myData += theAyah+strAyahNo;
+            myData += theAyah + strAyahNo;
         }
 
         WebView webView = (WebView) findViewById(R.id.webView1);
-        webView.loadDataWithBaseURL("file:///android_asset/",htmlFormat(myData),"text/html", "UTF-8", null);
+        webView.loadDataWithBaseURL("file:///android_asset/", htmlFormat(myData), "text/html", "UTF-8", null);
         //webView.loadData(String.format(htmlText, myData), "text/html", "utf-8");
     }
 
-    public static String htmlFormat(String mainBody){
+    public static String htmlFormat(String mainBody) {
         String html = "";
 
         String bimillahDiv = "<div style=\"text-align: center;\"> بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ </div><br/>";
 
-        html =  "<!DOCTYPE html>" +
+        html = "<!DOCTYPE html>" +
                 "<html>" +
                 "<head>" +
                 "<style>@font-face {font-family: 'Roboto'; src: url('file:///android_asset/Roboto-Regular.ttf');}</style>" +
                 "<title>" +
                 "</title>" +
-                "<link href='main.css' rel='stylesheet' type='text/css' />"+
+                "<link href='main.css' rel='stylesheet' type='text/css' />" +
                 "</head>" +
                 "<body>" +
                 bimillahDiv +
-                mainBody+
+                mainBody +
                 "</body>" +
                 "</html>";
 
         return html;
     }
 
-    public static String htmlInformasi(String mainBody){
+    public static String htmlInformasi(String mainBody) {
         String html = "";
 
-        html =  "<!DOCTYPE html>" +
+        html = "<!DOCTYPE html>" +
                 "<html>" +
                 "<head>" +
                 "<style>@font-face {font-family: 'Roboto'; src: url('file:///android_asset/Roboto-Regular.ttf');}</style>" +
                 "<title>" +
                 "</title>" +
-                "<link href='main.css' rel='stylesheet' type='text/css' />"+
+                "<link href='main.css' rel='stylesheet' type='text/css' />" +
                 "</head>" +
                 "<body style='font-size: 20px'>" +
-                mainBody+
+                mainBody +
                 "</body>" +
                 "</html>";
 
         return html;
     }
 
-    public String arabicNumber(String stdNumber){
+    public String arabicNumber(String stdNumber) {
         String val = stdNumber;
-        char[] arabicChars = {'٠','١','٢','٣','٤','٥','٦','٧','٨','٩'};
+        char[] arabicChars = {'٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'};
         StringBuilder builder = new StringBuilder();
-        for(int i =0;i<val.length();i++){
-            if(Character.isDigit(val.charAt(i))){
-                builder.append(arabicChars[(int)(val.charAt(i))-48]);
-            }
-            else{
+        for (int i = 0; i < val.length(); i++) {
+            if (Character.isDigit(val.charAt(i))) {
+                builder.append(arabicChars[(int) (val.charAt(i)) - 48]);
+            } else {
                 builder.append(val.charAt(i));
             }
         }
@@ -174,16 +176,80 @@ public class AyahWordActivity extends AppCompatActivity {
 
         if (id == R.id.a) {
             showDialogA();
-        }else if(id == R.id.b){
+        } else if (id == R.id.b) {
             showDialogB();
-        }else if(id == R.id.c){
+        } else if (id == R.id.c) {
             showDialogC();
-        }
-        else if(id == R.id.d){
+        } else if (id == R.id.d) {
             showDialogD();
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void openDialogProcess(Dialog theDialog, String typePenanda){
+        LayoutInflater li = theDialog.getLayoutInflater();
+        ViewGroup theLayout = (ViewGroup) li.inflate(R.layout.activity_table_dialog1, null);
+        ViewGroup tableLayout = (ViewGroup) theLayout.findViewById(R.id.tableLayoutTL);
+
+        if(typePenanda == "TL"){
+            theLayout = (ViewGroup) li.inflate(R.layout.activity_table_dialog1, null);
+            tableLayout = (ViewGroup) theLayout.findViewById(R.id.tableLayoutTL);
+        }
+        else if(typePenanda == "TM"){
+            theLayout = (ViewGroup) li.inflate(R.layout.activity_table_dialog2, null);
+            tableLayout = (ViewGroup) theLayout.findViewById(R.id.tableLayoutTM);
+        }
+        else if(typePenanda == "MR"){
+            theLayout = (ViewGroup) li.inflate(R.layout.activity_table_dialog3, null);
+            tableLayout = (ViewGroup) theLayout.findViewById(R.id.tableLayoutMR);
+        }
+
+        ArrayList<ProgressBar> progressBarArrayList = new ArrayList<ProgressBar>();
+
+        for (int i = 0; i < tableLayout.getChildCount(); i++){
+            ViewGroup tableRow = (ViewGroup) tableLayout.getChildAt(i);
+
+            for(int j = 0; j < tableRow.getChildCount(); j++){
+                if (tableRow.getChildAt(j) instanceof ProgressBar){
+                    ProgressBar theProgressBar = (ProgressBar) tableRow.getChildAt(j);
+
+                    progressBarArrayList.add(theProgressBar);
+                }
+            }
+        }
+
+        DatabaseHelper dbcenter = new DatabaseHelper(this);
+        SQLiteDatabase db = dbcenter.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM penanda_hafalan WHERE surah_no = '"+surah_no+"' and penanda_type = '"+typePenanda+"'",null);
+
+        if(cursor.getCount() > 0){
+            int rowIndex = 1;
+            for(ProgressBar pb : progressBarArrayList){
+                for (int i = 0; i < cursor.getCount(); i++) {
+                    cursor.moveToPosition(i);
+                    String cSurahNo = cursor.getString(1).toString();
+                    int cRowIndex = Integer.parseInt(cursor.getString(3).toString());
+                    String cPenandaType = cursor.getString(2).toString();
+                    int cPenandaValue = Integer.parseInt(cursor.getString(4).toString());
+
+                    if(rowIndex == cRowIndex){
+                        ProgressBar thePB = (ProgressBar) dia.findViewById(pb.getId());
+                        thePB.setProgress(cPenandaValue);
+
+                        View thePBView = (View) dia.findViewById(pb.getId());
+                        ViewGroup thePBParent = (ViewGroup) thePBView.getParent();
+                        View thePenandaView = thePBParent.getChildAt(thePBParent.indexOfChild(thePBView)-1);
+                        int thePenandaId = thePenandaView.getId();
+
+                        TextView thePenandaText = (TextView) dia.findViewById(thePenandaId);
+                        thePenandaText.setText(String.valueOf(cPenandaValue));
+                    }
+                }
+
+                rowIndex++;
+            }
+        }
     }
 
     public void showDialogA() {
@@ -198,53 +264,7 @@ public class AyahWordActivity extends AppCompatActivity {
         dia.show();
         dia.getWindow().setAttributes(lp);
 
-//        Button ton1 = (Button) dia.findViewById(R.id.buttonTL1);
-//        final ProgressBar geseran1 = (ProgressBar) dia.findViewById(R.id.progressbarTL1);
-//        final TextView text1 = (TextView) dia.findViewById(R.id.textPenandaTL1);
-//
-//
-//        Button tonsave = (Button) dia.findViewById(R.id.butonsave);
-//        dbHelper = new DatabaseHelper(this);
-//
-////        SQLiteDatabase db = dbHelper.getReadableDatabase();
-//////        cursor = db.rawQuery("SELECT * FROM kebutuhannutrisi WHERE nama = '" + jenis + "'", null);
-////        for (int i = 0; i < cursor.getCount(); i++) {
-////
-////        }
-//            val1 = 21;
-//            geseran1.setProgress(val1);
-//            text1.setText(String.valueOf(val1));
-//
-//            ton1.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View arg0) {
-//                    // TODO Auto-generated method stub
-//                    increaseloop(val1, geseran1, text1);
-//                }
-//            });
-//
-//            tonsave.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    SQLiteDatabase db = dbHelper.getWritableDatabase();
-//                    db.execSQL("insert into penanda_hafalan(surah_no, penanda_type, row_index, value) values('" +
-//                            surah_id + "','" +//surah_no
-//                            "TL" + "','" +//penanda_type (TL,TM,MR)
-//                            1 + "','" +//row_index
-//                            text1.getText().toString() + "')");//value
-//                    Toast.makeText(getApplicationContext(), "Berhasil", Toast.LENGTH_LONG).show();
-//                }
-//            });
-        }
-
-
-    public void increaseloop(int val, ProgressBar geseran, TextView text){
-        if(val1 < 40){
-            val1++;
-            Log.d("Loop per click :", String.valueOf(val1));
-            geseran.setProgress(val1);
-            text.setText(String.valueOf(val1));
-        }
+        openDialogProcess(dia,"TL");
     }
 
     public void showDialogB() {
@@ -258,6 +278,8 @@ public class AyahWordActivity extends AppCompatActivity {
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
         dia.show();
         dia.getWindow().setAttributes(lp);
+
+        openDialogProcess(dia,"TM");
     }
 
     public void showDialogC() {
@@ -271,11 +293,13 @@ public class AyahWordActivity extends AppCompatActivity {
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
         dia.show();
         dia.getWindow().setAttributes(lp);
+
+        openDialogProcess(dia,"MR");
     }
     public void showDialogD() {
         String myData = "<table border='1' style='border-collapse: collapse; width: 100%'>"+
-                        "<thead><tr><th style='text-align: center;'>Kata-kata Kunci Hafalan</th></tr></thead>"+
-                        "<tbody>";
+                "<thead><tr><th style='text-align: center;'>Kata-kata Kunci Hafalan</th></tr></thead>"+
+                "<tbody>";
 
         DatabaseHelper dbcenter = new DatabaseHelper(this);
         SQLiteDatabase db = dbcenter.getReadableDatabase();
@@ -365,6 +389,64 @@ public class AyahWordActivity extends AppCompatActivity {
         int progressTLLastValue = progressTL.getProgress();
         progressTLLastValue = (progressTLLastValue < 40 ? progressTLLastValue+1 : 40);
         progressTL.setProgress(progressTLLastValue);
+    }
+
+    public void saveFunction(View v) {
+        String penandaType = "TL";
+
+        int buttonId = v.getId();
+        String buttonName = getResources().getResourceEntryName(buttonId);
+        ViewGroup container = (ViewGroup) v.getParent();
+        ViewGroup tableLayout = (ViewGroup) container.findViewById(R.id.tableLayoutTL);
+
+        if(buttonName.contains("TM")){
+            tableLayout = (ViewGroup) container.findViewById(R.id.tableLayoutTM);
+            penandaType = "TM";
+        }
+        else if(buttonName.contains("MR")){
+            tableLayout = (ViewGroup) container.findViewById(R.id.tableLayoutMR);
+            penandaType = "MR";
+        }
+
+        ArrayList<ProgressBar> progressBarArrayList = new ArrayList<ProgressBar>();
+
+        for (int i = 0; i < tableLayout.getChildCount(); i++){
+            ViewGroup tableRow = (ViewGroup) tableLayout.getChildAt(i);
+
+            for(int j = 0; j < tableRow.getChildCount(); j++){
+                if (tableRow.getChildAt(j) instanceof ProgressBar){
+                    ProgressBar theProgressBar = (ProgressBar) tableRow.getChildAt(j);
+                    progressBarArrayList.add(theProgressBar);
+                }
+            }
+        }
+
+        DatabaseHelper dbcenter = new DatabaseHelper(this);
+        SQLiteDatabase db = dbcenter.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM penanda_hafalan WHERE surah_no = '"+surah_no+"' and penanda_type = '"+penandaType+"'",null);
+
+        int rowIndex = 1;
+        for(ProgressBar pb : progressBarArrayList){
+            if(cursor.getCount() > 0){
+                db.execSQL("update penanda_hafalan set " +
+                        "value = '" + pb.getProgress() + "'" +
+                        "where surah_no = '" + surah_no + "' " +
+                        "and row_index = '" + rowIndex + "' " +
+                        "and penanda_type = '" + penandaType + "'");
+            }
+            else{
+                db.execSQL("insert into penanda_hafalan(surah_no, penanda_type, row_index, value) values('" +
+                        surah_no + "','" +//surah_no
+                        penandaType + "','" +//penanda_type (TL,TM,MR)
+                        rowIndex + "','" +//row_index
+                        pb.getProgress() + "')");//value
+            }
+
+            rowIndex++;
+        }
+
+        dia.dismiss();
+        Toast.makeText(getApplicationContext(), "Berhasil", Toast.LENGTH_LONG).show();
     }
 
     private ArrayList<Ayah> getAyahArrayList(String surah_id) {
