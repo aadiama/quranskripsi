@@ -67,8 +67,11 @@ public class AyahWordActivity extends AppCompatActivity {
             Long curSurahId = currentX.getSurahId();
             Long curAyahNo = currentX.getAyahNo();
             String strAyahNo = String.valueOf(curAyahNo);
+
             strAyahNo = arabicNumber(strAyahNo);
-            strAyahNo = "(" + String.valueOf(strAyahNo) + ")";
+            strAyahNo = "<img src='b"+curAyahNo+".png' width='30' height='30'/>";
+
+            //strAyahNo = "(" + String.valueOf(strAyahNo) + ")";
             String theAyah = currentX.getAyahArabic();
 
             Long[] blueArray = new Long[50];
