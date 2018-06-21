@@ -69,7 +69,7 @@ public class AyahWordActivity extends AppCompatActivity {
             String strAyahNo = String.valueOf(curAyahNo);
 
             strAyahNo = arabicNumber(strAyahNo);
-            strAyahNo = "<img src='b"+curAyahNo+".png' width='30' height='30'/>";
+            strAyahNo = "&nbsp;<img src='b"+curAyahNo+".png' width='30' height='30'/>&nbsp;";
 
             //strAyahNo = "(" + String.valueOf(strAyahNo) + ")";
             String theAyah = currentX.getAyahArabic();
@@ -118,7 +118,7 @@ public class AyahWordActivity extends AppCompatActivity {
         String bimillahDiv = "<div style=\"text-align: center;\"> بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ </div><br/>";
 
         html = "<!DOCTYPE html>" +
-                "<html>" +
+                "<html dir='rtl' lang='ar'>" +
                 "<head>" +
                 "<style>@font-face {font-family: 'Roboto'; src: url('file:///android_asset/Roboto-Regular.ttf');}</style>" +
                 "<title>" +
@@ -138,7 +138,7 @@ public class AyahWordActivity extends AppCompatActivity {
         String html = "";
 
         html = "<!DOCTYPE html>" +
-                "<html>" +
+                "<html dir='rtl' lang='ar'>" +
                 "<head>" +
                 "<style>@font-face {font-family: 'Roboto'; src: url('file:///android_asset/Roboto-Regular.ttf');}</style>" +
                 "<title>" +
