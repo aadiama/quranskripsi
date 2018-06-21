@@ -190,6 +190,93 @@ public class AyahWordActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void setTextTikrar(Cursor cursor, int textTikrarId, int theTM, int rowIndex){
+        String theText = "";
+
+        if(cursor.getCount() > 0){
+            int totalPartTM = 0;
+            int firstAyat = 0;
+            int lastAyat = 0;
+
+            for (int i = 0; i < cursor.getCount(); i++) {
+                cursor.moveToPosition(i);
+                int ayahNo = Integer.parseInt(cursor.getString(2).toString());
+                int theTikrar = Integer.parseInt(cursor.getString(4).toString());
+
+                if(theTM == theTikrar){
+                    totalPartTM++;
+                }
+            }
+
+            for (int i = 0; i < cursor.getCount(); i++) {
+                cursor.moveToPosition(i);
+                int ayahNo = Integer.parseInt(cursor.getString(2).toString());
+                int theTikrar = Integer.parseInt(cursor.getString(4).toString());
+
+                if(totalPartTM == 1 && theTM == theTikrar && ((rowIndex == 1 || rowIndex == 4 || rowIndex == 8 || rowIndex == 13))){
+                    if(i < cursor.getCount()-1){
+                        cursor.moveToPosition(i+1);
+                    }
+
+                    int ayahNoNext = Integer.parseInt(cursor.getString(2).toString());
+                    int theTikrarNext = Integer.parseInt(cursor.getString(4).toString());
+
+                    firstAyat = ayahNo;
+                    lastAyat = (ayahNoNext-1);
+
+                    if(i == cursor.getCount()-1){
+                        lastAyat = ayahArrayList.size();
+                    }
+                }
+                else if(totalPartTM > 1 && theTM == theTikrar){
+                    if(rowIndex == 1 || rowIndex == 4 || rowIndex == 8 || rowIndex == 13){
+                        if(i < cursor.getCount()-1){
+                            cursor.moveToPosition(i+1);
+                        }
+
+                        int ayahNoNext = Integer.parseInt(cursor.getString(2).toString());
+                        int theTikrarNext = Integer.parseInt(cursor.getString(4).toString());
+
+                        firstAyat = ayahNo;
+                        lastAyat = (ayahNoNext-1);
+
+                        if(i == cursor.getCount()-1){
+                            lastAyat = ayahArrayList.size();
+                        }
+
+                        break;
+                    }
+                    else if(rowIndex == 2 || rowIndex == 5 || rowIndex == 9 || rowIndex == 14){
+                        if(i < cursor.getCount()-1){
+                            cursor.moveToPosition(i+1);
+                        }
+
+                        int ayahNoNext = Integer.parseInt(cursor.getString(2).toString());
+                        int theTikrarNext = Integer.parseInt(cursor.getString(4).toString());
+
+                        firstAyat = ayahNo;
+                        lastAyat = (ayahNoNext-1);
+
+                        if(i == cursor.getCount()-1){
+                            lastAyat = ayahArrayList.size();
+                        }
+                    }
+                }
+            }
+
+            if(firstAyat > 0 && lastAyat > 0){
+                theText = firstAyat + "-" + lastAyat;
+
+                if(firstAyat == lastAyat){
+                    theText = ""+firstAyat;
+                }
+            }
+        }
+
+        TextView textTikrar = (TextView) dia.findViewById(textTikrarId);
+        textTikrar.setText(theText);
+    }
+
     public void openDialogProcess(Dialog theDialog, String typePenanda){
         LayoutInflater li = theDialog.getLayoutInflater();
         ViewGroup theLayout = (ViewGroup) li.inflate(R.layout.activity_table_dialog1, null);
@@ -224,10 +311,44 @@ public class AyahWordActivity extends AppCompatActivity {
 
         DatabaseHelper dbcenter = new DatabaseHelper(this);
         SQLiteDatabase db = dbcenter.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM penanda_hafalan WHERE surah_no = '"+surah_no+"' and penanda_type = '"+typePenanda+"'",null);
+        Cursor cursorTikrar = db.rawQuery("SELECT * FROM quran_maqtha WHERE surah_id = '"+surah_no+"' order by ayah_no asc",null);
+
+        int rowPBIndex = 1;
+        int theTM = 1;
+        for(ProgressBar pb : progressBarArrayList){
+            if(rowPBIndex == 1 || rowPBIndex == 2){
+                theTM = 1;
+            }
+            else if(rowPBIndex == 4 || rowPBIndex == 5){
+                theTM = 2;
+            }
+            else if(rowPBIndex == 8 || rowPBIndex == 9){
+                theTM = 3;
+            }
+            else if(rowPBIndex == 13 || rowPBIndex == 14){
+                theTM = 4;
+            }
+
+            ProgressBar thePB = (ProgressBar) dia.findViewById(pb.getId());
+            View thePBView = (View) dia.findViewById(pb.getId());
+            ViewGroup thePBParent = (ViewGroup) thePBView.getParent();
+
+            if(typePenanda == "TM" && (rowPBIndex == 1 || rowPBIndex == 2 || rowPBIndex == 4 || rowPBIndex == 5
+                    || rowPBIndex == 8 || rowPBIndex == 9 || rowPBIndex == 13 || rowPBIndex == 14)){
+
+                View textTikrarView = thePBParent.getChildAt(thePBParent.indexOfChild(thePBView)-2);
+                int textTikrarId = textTikrarView.getId();
+                setTextTikrar(cursorTikrar,textTikrarId,theTM,rowPBIndex);
+            }
+
+            rowPBIndex++;
+        }
+
+        Cursor cursor = db.rawQuery("SELECT * FROM penanda_hafalan WHERE surah_no = '"+surah_no+"' and penanda_type = '"+typePenanda+"' order by row_index asc",null);
 
         if(cursor.getCount() > 0){
             int rowIndex = 1;
+
             for(ProgressBar pb : progressBarArrayList){
                 for (int i = 0; i < cursor.getCount(); i++) {
                     cursor.moveToPosition(i);
@@ -242,11 +363,13 @@ public class AyahWordActivity extends AppCompatActivity {
 
                         View thePBView = (View) dia.findViewById(pb.getId());
                         ViewGroup thePBParent = (ViewGroup) thePBView.getParent();
+
                         View thePenandaView = thePBParent.getChildAt(thePBParent.indexOfChild(thePBView)-1);
                         int thePenandaId = thePenandaView.getId();
-
                         TextView thePenandaText = (TextView) dia.findViewById(thePenandaId);
                         thePenandaText.setText(String.valueOf(cPenandaValue));
+
+                        break;
                     }
                 }
 
