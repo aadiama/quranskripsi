@@ -2,9 +2,12 @@ package com.example.adiama.quranskripsi;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -39,6 +42,8 @@ public class AyahWordActivity extends AppCompatActivity {
     Long surah_id;
     DatabaseHelper dbHelper;
     protected Cursor cursor;
+    MediaPlayer m;
+    Context c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +57,25 @@ public class AyahWordActivity extends AppCompatActivity {
         Long surah_id = bundle.getLong("surah_id");
         surah_no = surah_id;
         setTitle(title);
+
+        final Button btnPlay = (Button)findViewById(R.id.play);
+        Button btnStop = (Button)findViewById(R.id.stop);
+//        Button btnPause = (Button)findViewById(R.id.pause);
+
+        //Register button click listener
+        btnPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playOm(btnPlay);
+            }
+        });
+        btnStop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stopOm();
+            }
+        });
+
 
         ayahArrayList = getAyahArrayList(String.valueOf(surah_id));
         maqthaArrayList = getMaqthaArrayList(String.valueOf(surah_id));
@@ -105,6 +129,58 @@ public class AyahWordActivity extends AppCompatActivity {
         webView.loadDataWithBaseURL("file:///android_asset/",htmlFormat(myData),"text/html", "UTF-8", null);
         //webView.loadData(String.format(htmlText, myData), "text/html", "utf-8");
     }
+
+    //Play music
+    public void playOm(Button but){
+        c = getApplicationContext();
+        try {
+            if(m == null || m.isLooping()){
+                stopOm();
+                m = MediaPlayer.create(c, R.raw.a);
+                m.setLooping(true);
+                m.start();
+                Drawable top = getResources().getDrawable(R.drawable.pause);
+                but.setCompoundDrawablesWithIntrinsicBounds(null, top , null, null);
+            }else{
+                m.pause();
+                Drawable top = getResources().getDrawable(R.drawable.play);
+                but.setCompoundDrawablesWithIntrinsicBounds(null, top , null, null);
+            }
+        }catch (IllegalStateException e) {
+            e.printStackTrace();
+        }
+    }
+
+//    public void pauseOm(Button but){
+//        try{
+//            if(m.isPlaying()){
+//                m.pause();
+//                but.setCompoundDrawablesWithIntrinsicBounds( R.drawable.play, 0, 0, 0);
+//            } else {
+//                m.start();
+//                but.setCompoundDrawablesWithIntrinsicBounds( R.drawable.pause, 0, 0, 0);
+//            }
+//        }catch(IllegalStateException e){
+//            e.printStackTrace();
+//        }
+//
+//    }
+
+    //Stop music play
+    public void stopOm()
+    {
+        try {
+            if(m != null)
+            {
+                m.stop();
+                m.release();
+                m = null;
+            }
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public static String htmlFormat(String mainBody){
         String html = "";

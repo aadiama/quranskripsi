@@ -1,22 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id= "@+id/layout_ayah"
+    android:id="@+id/layout_ayah"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
     tools:context="com.example.adiama.quranskripsi.AyahWordActivity">
 
     <FrameLayout
         android:id="@+id/main_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <WebView
         android:id="@+id/webView1"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteY="3dp" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/webView1"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+
+        <Button
+            android:id="@+id/play"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignBaseline="@+id/pause"
+            android:layout_alignBottom="@+id/pause"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#00FFFFFF"
+            android:drawableTop="@drawable/play"
+            />
+
+        <Button
+            android:id="@+id/stop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignBaseline="@+id/play"
+            android:layout_alignBottom="@+id/play"
+            android:layout_alignParentEnd="true"
+            android:background="#00FFFFFF"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/stop"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>
