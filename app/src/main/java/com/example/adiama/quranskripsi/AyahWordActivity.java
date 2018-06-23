@@ -9,6 +9,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
+import android.net.Uri;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,11 +18,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.View;
 import android.view.WindowManager;
 import android.webkit.WebView;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
@@ -32,6 +38,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.SeekBar;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -49,7 +56,13 @@ public class AyahWordActivity extends AppCompatActivity {
     DatabaseHelper dbHelper;
     protected Cursor cursor;
     MediaPlayer m;
+    SeekBar mSeekBar;
     Context c;
+
+    Button btnPlay;
+    Boolean isPlay = false;
+
+    private final Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,25 +76,6 @@ public class AyahWordActivity extends AppCompatActivity {
         Long surah_id = bundle.getLong("surah_id");
         surah_no = surah_id;
         setTitle(title);
-
-        final Button btnPlay = (Button)findViewById(R.id.play);
-        Button btnStop = (Button)findViewById(R.id.stop);
-//        Button btnPause = (Button)findViewById(R.id.pause);
-
-        //Register button click listener
-        btnPlay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                playOm(btnPlay);
-            }
-        });
-        btnStop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                stopOm();
-            }
-        });
-
 
         ayahArrayList = getAyahArrayList(String.valueOf(surah_id));
         maqthaArrayList = getMaqthaArrayList(String.valueOf(surah_id));
@@ -136,54 +130,128 @@ public class AyahWordActivity extends AppCompatActivity {
 
         WebView webView = (WebView) findViewById(R.id.webView1);
         webView.loadDataWithBaseURL("file:///android_asset/", htmlFormat(myData), "text/html", "UTF-8", null);
-        //webView.loadData(String.format(htmlText, myData), "text/html", "utf-8");
+
+        btnPlay = (Button)findViewById(R.id.play);
+        Button btnStop = (Button)findViewById(R.id.stop);
+        mSeekBar = (SeekBar)findViewById(R.id.seekBar);
+
+        c = getApplicationContext();
+        m = MediaPlayer.create(getApplicationContext(), getResources().getIdentifier("surah"+surah_no,"raw",getPackageName()));
+        mSeekBar.setMax(m.getDuration());
+
+        //Register button click listener
+        btnPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playOm(btnPlay);
+            }
+        });
+
+        btnStop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stopOm(btnPlay);
+            }
+        });
+
+        mSeekBar.setOnTouchListener(new OnTouchListener() {
+            @Override public boolean onTouch(View v, MotionEvent event) {
+                seekChange(v);
+            return false;
+            }
+        });
+    }
+
+    // This is event handler thumb moving event
+    private void seekChange(View v){
+        if(m != null){
+            SeekBar sb = (SeekBar)v;
+            m.seekTo(sb.getProgress());
+        }
+    }
+
+    public void startPlayProgressUpdater() {
+        if(m != null){
+            mSeekBar.setProgress(m.getCurrentPosition());
+        }
+
+        if (m != null && m.isPlaying()) {
+            Runnable notification = new Runnable() {
+                public void run() {
+//                    if(m == null){
+//                        handler.removeCallbacks(this);
+//                    }
+                    startPlayProgressUpdater();
+                }
+            };
+            handler.postDelayed(notification,1000);
+        }
+        else{
+            isPlay = false;
+
+            if(m != null){
+                m.pause();
+            }
+
+            Drawable top = getResources().getDrawable(R.drawable.play);
+            btnPlay.setCompoundDrawablesWithIntrinsicBounds(null, top , null, null);
+        }
     }
 
     //Play music
     public void playOm(Button but){
-        c = getApplicationContext();
-        try {
-            if(m == null || m.isLooping()){
-                stopOm();
-                m = MediaPlayer.create(c, R.raw.a);
-                m.setLooping(true);
-                m.start();
-                Drawable top = getResources().getDrawable(R.drawable.pause);
-                but.setCompoundDrawablesWithIntrinsicBounds(null, top , null, null);
-            }else{
-                m.pause();
-                Drawable top = getResources().getDrawable(R.drawable.play);
-                but.setCompoundDrawablesWithIntrinsicBounds(null, top , null, null);
+        if(m == null){
+            m = MediaPlayer.create(getApplicationContext(), getResources().getIdentifier("surah"+surah_no,"raw",getPackageName()));
+        }
+
+        if (isPlay == false) {
+            Drawable top = getResources().getDrawable(R.drawable.pause);
+            btnPlay.setCompoundDrawablesWithIntrinsicBounds(null, top , null, null);
+
+            try{
+                isPlay = true;
+
+                if(m != null){
+                    m.start();
+                }
+
+                startPlayProgressUpdater();
+            }catch (IllegalStateException e) {
+                isPlay = false;
+
+                if(m != null){
+                    m.pause();
+                }
             }
-        }catch (IllegalStateException e) {
-            e.printStackTrace();
+        }else {
+            Drawable top = getResources().getDrawable(R.drawable.play);
+            btnPlay.setCompoundDrawablesWithIntrinsicBounds(null, top , null, null);
+            isPlay = false;
+
+            if(m != null){
+                m.pause();
+            }
         }
     }
 
-//    public void pauseOm(Button but){
-//        try{
-//            if(m.isPlaying()){
-//                m.pause();
-//                but.setCompoundDrawablesWithIntrinsicBounds( R.drawable.play, 0, 0, 0);
-//            } else {
-//                m.start();
-//                but.setCompoundDrawablesWithIntrinsicBounds( R.drawable.pause, 0, 0, 0);
-//            }
-//        }catch(IllegalStateException e){
-//            e.printStackTrace();
-//        }
-//
-//    }
-
     //Stop music play
-    public void stopOm()
-    {
+    public void stopOm(Button but1){
         try {
-            if(m != null)
-            {
+            if(m != null){
+//                if(isPlay){
+//                    m.pause();
+//                }
+
+                Drawable top = getResources().getDrawable(R.drawable.play);
+                but1.setCompoundDrawablesWithIntrinsicBounds(null, top , null, null);
+                mSeekBar.setProgress(0);
+                //m.pause();
                 m.stop();
                 m.release();
+                //m = MediaPlayer.create(c, R.raw.a);
+                //m.prepare();
                 m = null;
+                //m = MediaPlayer.create(c, R.raw.a);
             }
         } catch (IllegalStateException e) {
             e.printStackTrace();
@@ -501,6 +569,7 @@ public class AyahWordActivity extends AppCompatActivity {
 
         openDialogProcess(dia,"MR");
     }
+
     public void showDialogD() {
         String myData = "<table border='1' style='border-collapse: collapse; width: 100%'>"+
                 "<thead><tr><th style='text-align: center;'>Kata-kata Kunci Hafalan</th></tr></thead>"+
