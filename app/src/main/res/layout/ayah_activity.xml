@@ -16,53 +16,56 @@
     <WebView
         android:id="@+id/webView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/relativeLayout"
         android:orientation="vertical" />
 
-    <SeekBar
-        android:id="@+id/seekBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_below="@+id/webView1"/>
-
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/seekBar"
         android:orientation="horizontal"
         android:weightSum="2"
+        android:layout_alignParentBottom="true">
 
-        >
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/seekBar"
+            android:orientation="horizontal"
+            android:weightSum="2">
 
+            <Button
+                android:id="@+id/play"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignBaseline="@+id/pause"
+                android:layout_alignBottom="@+id/pause"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#00FFFFFF"
+                android:drawableTop="@drawable/play" />
 
-        <Button
-            android:id="@+id/play"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_alignBaseline="@+id/pause"
-            android:layout_alignBottom="@+id/pause"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:background="#00FFFFFF"
-            android:drawableTop="@drawable/play"
-            />
+            <Button
+                android:id="@+id/stop"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignBaseline="@+id/play"
+                android:layout_alignBottom="@+id/play"
+                android:layout_alignParentEnd="true"
+                android:background="#00FFFFFF"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/stop" />
 
-        <Button
-            android:id="@+id/stop"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_alignBaseline="@+id/play"
-            android:layout_alignBottom="@+id/play"
-            android:layout_alignParentEnd="true"
-            android:background="#00FFFFFF"
-            android:layout_weight="1"
-            android:drawableTop="@drawable/stop"
-            />
+        </LinearLayout>
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>
