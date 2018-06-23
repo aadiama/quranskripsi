@@ -19,14 +19,24 @@
         android:layout_height="wrap_content"
         android:orientation="vertical" />
 
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_below="@+id/webView1"/>
+
     <LinearLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/webView1"
+        android:layout_below="@+id/seekBar"
         android:orientation="horizontal"
         android:weightSum="2"
+
         >
+
+
 
         <Button
             android:id="@+id/play"
