@@ -121,8 +121,8 @@ public class AyahWordActivity extends AppCompatActivity {
             }
 
             if (tikrarNo == 1 || tikrarNo == 3) {
-                strAyahNo = "<span style='background-color: rgb(200, 225, 255, 0.5)'>" + strAyahNo + "</span>";
-                theAyah = "<span style='background-color: rgb(200, 225, 255, 0.5)'>" + theAyah + "</span>";
+                strAyahNo = "<span style='background-color: #e8edff'>" + strAyahNo + "</span>";
+                theAyah = "<span style='background-color: #e8edff'>" + theAyah + "</span>";
             }
 
             myData += theAyah + strAyahNo;
@@ -162,6 +162,19 @@ public class AyahWordActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed(){
+        if(m != null){
+            mSeekBar.setProgress(0);
+            m.stop();
+            m.release();
+            m = null;
+        }
+
+        finish();
+        return;
+    }
+
     // This is event handler thumb moving event
     private void seekChange(View v){
         if(m != null){
@@ -178,9 +191,6 @@ public class AyahWordActivity extends AppCompatActivity {
         if (m != null && m.isPlaying()) {
             Runnable notification = new Runnable() {
                 public void run() {
-//                    if(m == null){
-//                        handler.removeCallbacks(this);
-//                    }
                     startPlayProgressUpdater();
                 }
             };
@@ -198,7 +208,7 @@ public class AyahWordActivity extends AppCompatActivity {
         }
     }
 
-    //Play music
+    //Play/Pause music
     public void playOm(Button but){
         if(m == null){
             m = MediaPlayer.create(getApplicationContext(), getResources().getIdentifier("surah"+surah_no,"raw",getPackageName()));
@@ -238,20 +248,12 @@ public class AyahWordActivity extends AppCompatActivity {
     public void stopOm(Button but1){
         try {
             if(m != null){
-//                if(isPlay){
-//                    m.pause();
-//                }
-
                 Drawable top = getResources().getDrawable(R.drawable.play);
                 but1.setCompoundDrawablesWithIntrinsicBounds(null, top , null, null);
                 mSeekBar.setProgress(0);
-                //m.pause();
                 m.stop();
                 m.release();
-                //m = MediaPlayer.create(c, R.raw.a);
-                //m.prepare();
                 m = null;
-                //m = MediaPlayer.create(c, R.raw.a);
             }
         } catch (IllegalStateException e) {
             e.printStackTrace();
