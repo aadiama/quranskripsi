@@ -11,10 +11,15 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -42,8 +47,41 @@ public class SurahFragment extends Fragment {
         super.onCreate(savedInstanceState);
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
         surahArrayList = getSurahArrayList();
+        setHasOptionsMenu(true);
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_bar, menu);
+        super.onCreateOptionsMenu(menu,inflater);
+
+        MenuItem searchIem = menu.findItem(R.id.search);
+        final SearchView searchView = (SearchView) searchIem.getActionView();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                ArrayList<Surah> surahArrayListByName = new ArrayList<Surah>();
+                surahArrayListByName = getSurahArrayListByName(query);
+                surahArrayList.clear();
+                surahArrayList.addAll(surahArrayListByName);
+                surahAdapter.notifyDataSetChanged();
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String query) {
+                ArrayList<Surah> surahArrayListByName = new ArrayList<Surah>();
+                surahArrayListByName = getSurahArrayListByName(query);
+                surahArrayList.clear();
+                surahArrayList.addAll(surahArrayListByName);
+                surahAdapter.notifyDataSetChanged();
+
+                return false;
+            }
+        });
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -121,7 +159,12 @@ public class SurahFragment extends Fragment {
         return surahArrayList;
     }
 
-
+    private ArrayList<Surah> getSurahArrayListByName(String query) {
+        ArrayList<Surah> surahArrayList = new ArrayList<Surah>();
+        SurahDataSource surahDataSource = new SurahDataSource(getActivity());
+        surahArrayList = surahDataSource.getEnglishSurahArrayListByName(query);
+        return surahArrayList;
+    }
 }
 
 

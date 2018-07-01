@@ -27,7 +27,6 @@ public class SurahDataSource {
     }
 
     public ArrayList<Surah> getEnglishSurahArrayList() {
-
         ArrayList<Surah> surahArrayList = new ArrayList<>();
         SQLiteDatabase db = databaseHelper.getReadableDatabase();
         cursor = db.rawQuery("SELECT surah_name._id,surah_name.name_arabic," +
@@ -49,10 +48,34 @@ public class SurahDataSource {
         return surahArrayList;
     }
 
+    public ArrayList<Surah> getEnglishSurahArrayListByName(String query) {
+        query = query.toLowerCase();
+
+        ArrayList<Surah> surahArrayList = new ArrayList<>();
+
+        SQLiteDatabase db = databaseHelper.getReadableDatabase();
+        cursor = db.rawQuery("SELECT surah_name._id,surah_name.name_arabic," +
+                "surah_name.name_english,surah_name.ayah_number FROM surah_name WHERE name_english like '%" + query + "%' AND surah_no IN ('84','85')", null);
+
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            Surah surah = new Surah();
+            surah.setId(cursor.getLong(cursor.getColumnIndex(SURAH_ID)));
+            surah.setNameArabic(cursor.getString(cursor.getColumnIndex(SURAH_NAME_ARABIC)));
+            surah.setNameTranslate(cursor.getString(cursor.getColumnIndex(SURAH_NAME_ENGLISH)));
+            surah.setAyahNumber(cursor.getLong(cursor.getColumnIndex(SURAH_AYAH_NUMBER)));
+            surahArrayList.add(surah);
+            cursor.moveToNext();
+
+        }
+        cursor.close();
+        db.close();
+
+        return surahArrayList;
+    }
+
     public ArrayList<Surah> getBanglaSurahArrayList() {
-
         long banglaStart = 28;
-
 
         ArrayList<Surah> surahArrayList = new ArrayList<>();
         SQLiteDatabase db = databaseHelper.getReadableDatabase();
@@ -74,7 +97,6 @@ public class SurahDataSource {
     }
 
     public ArrayList<Surah> getIndonesianSurahArrayList() {
-
         ArrayList<Surah> surahArrayList = new ArrayList<>();
         SQLiteDatabase db = databaseHelper.getReadableDatabase();
         cursor = db.rawQuery("SELECT surah_name._id,surah_name.name_arabic,surah_name.arti_nama,surah_name.ayah_number FROM surah_name", null);

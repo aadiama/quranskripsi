@@ -3,19 +3,23 @@ package com.example.adiama.quranskripsi;
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.SurahViewHolder> {
+public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.SurahViewHolder> implements Filterable {
 
     OnItemClickListener mItemClickListener;
     private ArrayList<Surah> surahArrayList;
+    private ArrayList<Surah> surahArrayListFiltered;
     private Context context;
 
 
@@ -101,6 +105,43 @@ public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.SurahViewHol
 
         }
 
+    }
+
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence charSequence) {
+                String charString = charSequence.toString();
+                if (charString.isEmpty()) {
+                    surahArrayListFiltered = surahArrayList;
+                } else {
+                    ArrayList<Surah> filteredList = new ArrayList<>();
+                    for (Surah row : surahArrayList) {
+
+                        // name match condition. this might differ depending on your requirement
+                        // here we are looking for name or phone number match
+                        if (row.getNameTranslate().toLowerCase().contains(charString.toLowerCase())) {
+                            filteredList.add(row);
+                        }
+                    }
+
+                    surahArrayListFiltered = filteredList;
+                }
+
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = surahArrayListFiltered;
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+                surahArrayListFiltered = (ArrayList<Surah>) filterResults.values;
+
+                // refresh the list with filtered data
+                notifyDataSetChanged();
+            }
+        };
     }
 
 }
