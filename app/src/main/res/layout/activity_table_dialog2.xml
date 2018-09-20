@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -89,6 +90,19 @@
                         android:background="@color/white" />
 
                     <Button
+                        android:id="@+id/buttonTikrar1Minus"
+                        android:onClick="minusPenandaTL"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="-"
+                        android:textColor="#ffffff" />
+                    <Button
                         android:id="@+id/buttonTikrar1"
                         android:onClick="addPenandaTL"
                         android:layout_width="25dp"
@@ -112,7 +126,7 @@
 
                     <TextView
                         android:id="@+id/textTikrar2"
-                        android:layout_width="25dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
                         android:layout_marginLeft="1dp"
@@ -149,6 +163,19 @@
                         android:background="@color/white" />
 
                     <Button
+                        android:id="@+id/buttonTikrar2Minus"
+                        android:onClick="minusPenandaTL"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="-"
+                        android:textColor="#ffffff" />
+                    <Button
                         android:id="@+id/buttonTikrar2"
                         android:onClick="addPenandaTL"
                         android:layout_width="25dp"
@@ -174,7 +201,7 @@
 
                     <TextView
                         android:id="@+id/textTikrar3"
-                        android:layout_width="25dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
                         android:layout_marginLeft="1dp"
@@ -211,6 +238,19 @@
                         android:background="@color/white" />
 
                     <Button
+                        android:id="@+id/buttonTikrar3Minus"
+                        android:onClick="minusPenandaTL"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="-"
+                        android:textColor="#ffffff" />
+                    <Button
                         android:id="@+id/buttonTikrar3"
                         android:onClick="addPenandaTL"
                         android:layout_width="25dp"
@@ -235,7 +275,7 @@
 
                     <TextView
                         android:id="@+id/textTikrar4"
-                        android:layout_width="25dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
                         android:layout_marginLeft="1dp"
@@ -272,6 +312,19 @@
                         android:background="@color/white" />
 
                     <Button
+                        android:id="@+id/buttonTikrar4Minus"
+                        android:onClick="minusPenandaTL"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="-"
+                        android:textColor="#ffffff" />
+                    <Button
                         android:id="@+id/buttonTikrar4"
                         android:onClick="addPenandaTL"
                         android:layout_width="25dp"
@@ -296,7 +349,7 @@
 
                     <TextView
                         android:id="@+id/textTikrar5"
-                        android:layout_width="25dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
                         android:layout_marginLeft="1dp"
@@ -333,6 +386,19 @@
                         android:background="@color/white" />
 
                     <Button
+                        android:id="@+id/buttonTikrar5Minus"
+                        android:onClick="minusPenandaTL"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="-"
+                        android:textColor="#ffffff" />
+                    <Button
                         android:id="@+id/buttonTikrar5"
                         android:onClick="addPenandaTL"
                         android:layout_width="25dp"
@@ -357,7 +423,7 @@
 
                     <TextView
                         android:id="@+id/textTikrar6"
-                        android:layout_width="25dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
                         android:layout_marginLeft="1dp"
@@ -394,6 +460,19 @@
                         android:background="@color/white" />
 
                     <Button
+                        android:id="@+id/buttonTikrar6Minus"
+                        android:onClick="minusPenandaTL"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="-"
+                        android:textColor="#ffffff" />
+                    <Button
                         android:id="@+id/buttonTikrar6"
                         android:onClick="addPenandaTL"
                         android:layout_width="25dp"
@@ -418,7 +497,7 @@
 
                     <TextView
                         android:id="@+id/textTikrar7"
-                        android:layout_width="25dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
                         android:layout_marginLeft="1dp"
@@ -455,6 +534,19 @@
                         android:background="@color/white" />
 
                     <Button
+                        android:id="@+id/buttonTikrar7Minus"
+                        android:onClick="minusPenandaTL"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="-"
+                        android:textColor="#ffffff" />
+                    <Button
                         android:id="@+id/buttonTikrar7"
                         android:onClick="addPenandaTL"
                         android:layout_width="25dp"
@@ -479,7 +571,7 @@
 
                     <TextView
                         android:id="@+id/textTikrar8"
-                        android:layout_width="25dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
                         android:layout_marginLeft="1dp"
@@ -516,6 +608,19 @@
                         android:background="@color/white" />
 
                     <Button
+                        android:id="@+id/buttonTikrar8Minus"
+                        android:onClick="minusPenandaTL"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="-"
+                        android:textColor="#ffffff" />
+                    <Button
                         android:id="@+id/buttonTikrar8"
                         android:onClick="addPenandaTL"
                         android:layout_width="25dp"
@@ -540,7 +645,7 @@
 
                     <TextView
                         android:id="@+id/textTikrar9"
-                        android:layout_width="25dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
                         android:layout_marginLeft="1dp"
@@ -577,6 +682,19 @@
                         android:background="@color/white" />
 
                     <Button
+                        android:id="@+id/buttonTikrar9Minus"
+                        android:onClick="minusPenandaTL"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="-"
+                        android:textColor="#ffffff" />
+                    <Button
                         android:id="@+id/buttonTikrar9"
                         android:onClick="addPenandaTL"
                         android:layout_width="25dp"
@@ -601,7 +719,7 @@
 
                     <TextView
                         android:id="@+id/textTikrar10"
-                        android:layout_width="25dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
                         android:layout_marginLeft="1dp"
@@ -638,6 +756,19 @@
                         android:background="@color/white" />
 
                     <Button
+                        android:id="@+id/buttonTikrar10Minus"
+                        android:onClick="minusPenandaTL"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="-"
+                        android:textColor="#ffffff" />
+                    <Button
                         android:id="@+id/buttonTikrar10"
                         android:onClick="addPenandaTL"
                         android:layout_width="25dp"
@@ -662,7 +793,7 @@
 
                     <TextView
                         android:id="@+id/textTikrar11"
-                        android:layout_width="25dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
                         android:layout_marginLeft="1dp"
@@ -699,6 +830,19 @@
                         android:background="@color/white" />
 
                     <Button
+                        android:id="@+id/buttonTikrar11Minus"
+                        android:onClick="minusPenandaTL"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="-"
+                        android:textColor="#ffffff" />
+                    <Button
                         android:id="@+id/buttonTikrar11"
                         android:onClick="addPenandaTL"
                         android:layout_width="25dp"
@@ -723,7 +867,7 @@
 
                     <TextView
                         android:id="@+id/textTikrar12"
-                        android:layout_width="25dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
                         android:layout_marginLeft="1dp"
@@ -760,6 +904,19 @@
                         android:background="@color/white" />
 
                     <Button
+                        android:id="@+id/buttonTikrar12Minus"
+                        android:onClick="minusPenandaTL"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="-"
+                        android:textColor="#ffffff" />
+                    <Button
                         android:id="@+id/buttonTikrar12"
                         android:onClick="addPenandaTL"
                         android:layout_width="25dp"
@@ -784,7 +941,7 @@
 
                     <TextView
                         android:id="@+id/textTikrar13"
-                        android:layout_width="25dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
                         android:layout_marginLeft="1dp"
@@ -821,6 +978,19 @@
                         android:background="@color/white" />
 
                     <Button
+                        android:id="@+id/buttonTikrar13Minus"
+                        android:onClick="minusPenandaTL"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="-"
+                        android:textColor="#ffffff" />
+                    <Button
                         android:id="@+id/buttonTikrar13"
                         android:onClick="addPenandaTL"
                         android:layout_width="25dp"
@@ -845,7 +1015,7 @@
 
                     <TextView
                         android:id="@+id/textTikrar14"
-                        android:layout_width="25dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
                         android:layout_marginLeft="1dp"
@@ -882,6 +1052,19 @@
                         android:background="@color/white" />
 
                     <Button
+                        android:id="@+id/buttonTikrar14Minus"
+                        android:onClick="minusPenandaTL"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="-"
+                        android:textColor="#ffffff" />
+                    <Button
                         android:id="@+id/buttonTikrar14"
                         android:onClick="addPenandaTL"
                         android:layout_width="25dp"
@@ -905,7 +1088,7 @@
 
                     <TextView
                         android:id="@+id/textTikrar15"
-                        android:layout_width="25dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
                         android:layout_marginLeft="1dp"
@@ -942,6 +1125,19 @@
                         android:background="@color/white" />
 
                     <Button
+                        android:id="@+id/buttonTikrar15Minus"
+                        android:onClick="minusPenandaTL"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="-"
+                        android:textColor="#ffffff" />
+                    <Button
                         android:id="@+id/buttonTikrar15"
                         android:onClick="addPenandaTL"
                         android:layout_width="25dp"
@@ -966,7 +1162,7 @@
 
                     <TextView
                         android:id="@+id/textTikrar16"
-                        android:layout_width="25dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
                         android:layout_marginLeft="1dp"
@@ -1003,6 +1199,19 @@
                         android:background="@color/white" />
 
                     <Button
+                        android:id="@+id/buttonTikrar16Minus"
+                        android:onClick="minusPenandaTL"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="-"
+                        android:textColor="#ffffff" />
+                    <Button
                         android:id="@+id/buttonTikrar16"
                         android:onClick="addPenandaTL"
                         android:layout_width="25dp"
@@ -1027,7 +1236,7 @@
 
                     <TextView
                         android:id="@+id/textTikrar17"
-                        android:layout_width="25dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
                         android:layout_marginLeft="1dp"
@@ -1064,6 +1273,19 @@
                         android:background="@color/white" />
 
                     <Button
+                        android:id="@+id/buttonTikrar17Minus"
+                        android:onClick="minusPenandaTL"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="-"
+                        android:textColor="#ffffff" />
+                    <Button
                         android:id="@+id/buttonTikrar17"
                         android:onClick="addPenandaTL"
                         android:layout_width="25dp"
@@ -1088,7 +1310,7 @@
 
                     <TextView
                         android:id="@+id/textTikrar18"
-                        android:layout_width="25dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
                         android:layout_marginLeft="1dp"
@@ -1125,6 +1347,19 @@
                         android:background="@color/white" />
 
                     <Button
+                        android:id="@+id/buttonTikrar18Minus"
+                        android:onClick="minusPenandaTL"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="-"
+                        android:textColor="#ffffff" />
+                    <Button
                         android:id="@+id/buttonTikrar18"
                         android:onClick="addPenandaTL"
                         android:layout_width="25dp"
@@ -1149,7 +1384,7 @@
 
                     <TextView
                         android:id="@+id/textTikrar19"
-                        android:layout_width="25dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
                         android:layout_marginLeft="1dp"
@@ -1186,6 +1421,19 @@
                         android:background="@color/white" />
 
                     <Button
+                        android:id="@+id/buttonTikrar19Minus"
+                        android:onClick="minusPenandaTL"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="-"
+                        android:textColor="#ffffff" />
+                    <Button
                         android:id="@+id/buttonTikrar19"
                         android:onClick="addPenandaTL"
                         android:layout_width="25dp"
@@ -1211,7 +1459,7 @@
 
                     <TextView
                         android:id="@+id/textTikrar20"
-                        android:layout_width="25dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="25dp"
                         android:layout_marginBottom="1dp"
                         android:layout_marginLeft="1dp"
@@ -1247,6 +1495,19 @@
                         android:layout_marginTop="1dp"
                         android:background="@color/white" />
 
+                    <Button
+                        android:id="@+id/buttonTikrar20Minus"
+                        android:onClick="minusPenandaTL"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/cardview_dark_background"
+                        android:text="-"
+                        android:textColor="#ffffff" />
                     <Button
                         android:id="@+id/buttonTikrar20"
                         android:onClick="addPenandaTL"

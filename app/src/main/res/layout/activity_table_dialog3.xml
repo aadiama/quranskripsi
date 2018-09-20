@@ -78,6 +78,19 @@
                 android:background="@color/white" />
 
             <Button
+                android:id="@+id/buttonMR1Minus"
+                android:onClick="minusPenandaTL"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="right"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:text="-"
+                android:background="@color/cardview_dark_background"
+                android:textColor="#ffffff" />
+            <Button
                 android:id="@+id/buttonMR1"
                 android:onClick="addPenandaTL"
                 android:layout_width="25dp"
@@ -137,6 +150,19 @@
                 android:background="@color/white" />
 
             <Button
+                android:id="@+id/buttonMR2Minus"
+                android:onClick="minusPenandaTL"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="right"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:text="-"
+                android:background="@color/cardview_dark_background"
+                android:textColor="#ffffff" />
+            <Button
                 android:id="@+id/buttonMR2"
                 android:onClick="addPenandaTL"
                 android:layout_width="25dp"
@@ -195,6 +221,19 @@
                 android:layout_marginTop="1dp"
                 android:background="@color/white" />
             <Button
+                android:id="@+id/buttonMR3Minus"
+                android:onClick="minusPenandaTL"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="right"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:text="-"
+                android:background="@color/cardview_dark_background"
+                android:textColor="#ffffff" />
+            <Button
                 android:id="@+id/buttonMR3"
                 android:onClick="addPenandaTL"
                 android:layout_width="25dp"
@@ -251,6 +290,19 @@
                 android:layout_marginRight="1dp"
                 android:layout_marginTop="1dp"
                 android:background="@color/white" />
+            <Button
+                android:id="@+id/buttonMR4Minus"
+                android:onClick="minusPenandaTL"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="right"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:text="-"
+                android:background="@color/cardview_dark_background"
+                android:textColor="#ffffff" />
             <Button
                 android:id="@+id/buttonMR4"
                 android:onClick="addPenandaTL"

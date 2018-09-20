@@ -642,7 +642,7 @@ public class AyahWordActivity extends AppCompatActivity {
         alert.show();
     }
 
-    public void addPenandaTL(View v) {
+    public void minusPenandaTL(View v) {
         int buttonId = v.getId();
         String buttonName = getResources().getResourceEntryName(buttonId);
 
@@ -653,6 +653,36 @@ public class AyahWordActivity extends AppCompatActivity {
         String textPenandaTLName = getResources().getResourceEntryName(textPenandaTLId);
 
         View progressPenandaTL = container.getChildAt(container.indexOfChild(v)-1);
+        int progressPenandaTLId = progressPenandaTL.getId();
+        String progressPenandaTLName = getResources().getResourceEntryName(progressPenandaTLId);
+
+        final TextView penandaTL = (TextView) dia.findViewById(textPenandaTLId);
+        int penandaTLLastValue = Integer.parseInt(String.valueOf(penandaTL.getText()));
+        penandaTLLastValue = (penandaTLLastValue < 40 ? penandaTLLastValue-1 : 40);
+
+        if(penandaTLLastValue < 0){
+            penandaTLLastValue = 0;
+        }
+
+        penandaTL.setText(String.valueOf(penandaTLLastValue));
+
+        final ProgressBar progressTL = (ProgressBar) dia.findViewById(progressPenandaTLId);
+        int progressTLLastValue = progressTL.getProgress();
+        progressTLLastValue = (progressTLLastValue < 40 ? progressTLLastValue-1 : 40);
+        progressTL.setProgress(progressTLLastValue);
+    }
+
+    public void addPenandaTL(View v) {
+        int buttonId = v.getId();
+        String buttonName = getResources().getResourceEntryName(buttonId);
+
+        ViewGroup container = (ViewGroup) v.getParent();
+
+        View textPenandaTL = container.getChildAt(container.indexOfChild(v)-3);
+        int textPenandaTLId = textPenandaTL.getId();
+        String textPenandaTLName = getResources().getResourceEntryName(textPenandaTLId);
+
+        View progressPenandaTL = container.getChildAt(container.indexOfChild(v)-2);
         int progressPenandaTLId = progressPenandaTL.getId();
         String progressPenandaTLName = getResources().getResourceEntryName(progressPenandaTLId);
 
