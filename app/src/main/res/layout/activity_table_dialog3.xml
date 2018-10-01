@@ -68,7 +68,7 @@
             <ProgressBar
                 android:id="@+id/progressbarMR1"
                 style="?android:attr/progressBarStyleHorizontal"
-                android:max="40"
+                android:max="160"
                 android:layout_width="197dp"
                 android:layout_height="25dp"
                 android:layout_marginBottom="1dp"
@@ -79,7 +79,7 @@
 
             <Button
                 android:id="@+id/buttonMR1Minus"
-                android:onClick="minusPenandaTL"
+                android:onClick="minusPenandaTLBaru"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_gravity="right"
@@ -92,7 +92,7 @@
                 android:textColor="#ffffff" />
             <Button
                 android:id="@+id/buttonMR1"
-                android:onClick="addPenandaTL"
+                android:onClick="addPenandaTLBaru"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_gravity="right"
@@ -104,218 +104,6 @@
                 android:background="@color/cardview_dark_background"
                 android:textColor="#ffffff" />
 
-        </TableRow>
-
-        <TableRow
-            android:layout_height="wrap_content"
-            android:id="@+id/rowMR2"
-            android:layout_width="match_parent"
-            android:layout_marginBottom="3dp"
-            >
-
-            <TextView
-                android:text="MR"
-                android:id="@+id/textMR2"
-                android:textStyle="bold"
-                android:textAlignment="center"
-                android:layout_marginBottom="1dp"
-                android:layout_marginTop="1dp"
-                android:layout_marginLeft="1dp"
-                android:layout_marginRight="1dp"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:background="#FFFFFF"></TextView>
-            <TextView
-                android:text="0"
-                android:id="@+id/textPenandaMR2"
-                android:gravity="center_horizontal"
-                android:textAlignment="center"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginBottom="1dp"
-                android:layout_marginTop="1dp"
-                android:layout_marginLeft="1dp"
-                android:layout_marginRight="1dp"
-                android:background="#FFFFFF"></TextView>
-            <ProgressBar
-                android:id="@+id/progressbarMR2"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:max="40"
-                android:layout_width="197dp"
-                android:layout_height="25dp"
-                android:layout_marginBottom="1dp"
-                android:layout_marginLeft="1dp"
-                android:layout_marginRight="1dp"
-                android:layout_marginTop="1dp"
-                android:background="@color/white" />
-
-            <Button
-                android:id="@+id/buttonMR2Minus"
-                android:onClick="minusPenandaTL"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_gravity="right"
-                android:layout_marginBottom="0dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginRight="0dp"
-                android:layout_marginTop="0dp"
-                android:text="-"
-                android:background="@color/cardview_dark_background"
-                android:textColor="#ffffff" />
-            <Button
-                android:id="@+id/buttonMR2"
-                android:onClick="addPenandaTL"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_gravity="right"
-                android:layout_marginBottom="0dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginRight="0dp"
-                android:layout_marginTop="0dp"
-                android:text="+"
-                android:background="@color/cardview_dark_background"
-                android:textColor="#ffffff" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_height="wrap_content"
-            android:id="@+id/rowMR3"
-            android:layout_width="match_parent"
-            android:layout_marginBottom="3dp"
-
-            >
-            <TextView
-                android:text="MR"
-                android:id="@+id/textMR3"
-                android:textStyle="bold"
-                android:textAlignment="center"
-                android:layout_marginBottom="1dp"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="1dp"
-                android:layout_marginLeft="1dp"
-                android:layout_marginRight="1dp"
-                android:background="#FFFFFF"></TextView>
-            <TextView
-                android:text="0"
-                android:id="@+id/textPenandaMR3"
-                android:gravity="center_horizontal"
-                android:textAlignment="center"
-                android:layout_marginBottom="1dp"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="1dp"
-                android:layout_marginLeft="1dp"
-                android:layout_marginRight="1dp"
-                android:background="#FFFFFF"></TextView>
-            <ProgressBar
-                android:id="@+id/progressbarMR3"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:max="40"
-                android:layout_width="197dp"
-                android:layout_height="25dp"
-                android:layout_marginBottom="1dp"
-                android:layout_marginLeft="1dp"
-                android:layout_marginRight="1dp"
-                android:layout_marginTop="1dp"
-                android:background="@color/white" />
-            <Button
-                android:id="@+id/buttonMR3Minus"
-                android:onClick="minusPenandaTL"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_gravity="right"
-                android:layout_marginBottom="0dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginRight="0dp"
-                android:layout_marginTop="0dp"
-                android:text="-"
-                android:background="@color/cardview_dark_background"
-                android:textColor="#ffffff" />
-            <Button
-                android:id="@+id/buttonMR3"
-                android:onClick="addPenandaTL"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_gravity="right"
-                android:layout_marginBottom="0dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginRight="0dp"
-                android:layout_marginTop="0dp"
-                android:text="+"
-                android:background="@color/cardview_dark_background"
-                android:textColor="#ffffff" />
-        </TableRow>
-
-        <TableRow
-            android:layout_height="wrap_content"
-            android:id="@+id/rowMR4"
-            android:layout_width="match_parent"
-            android:layout_marginBottom="3dp"
-
-            >
-            <TextView
-                android:text="MR"
-                android:id="@+id/textMR4"
-                android:textStyle="bold"
-                android:textAlignment="center"
-                android:layout_marginBottom="1dp"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="1dp"
-                android:layout_marginLeft="1dp"
-                android:layout_marginRight="1dp"
-                android:background="#FFFFFF"></TextView>
-            <TextView
-                android:text="0"
-                android:id="@+id/textPenandaMR4"
-                android:gravity="center_horizontal"
-                android:textAlignment="center"
-                android:layout_marginBottom="1dp"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="1dp"
-                android:layout_marginLeft="1dp"
-                android:layout_marginRight="1dp"
-                android:background="#FFFFFF"></TextView>
-            <ProgressBar
-                android:id="@+id/progressbarMR4"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:max="40"
-                android:layout_width="197dp"
-                android:layout_height="25dp"
-                android:layout_marginBottom="1dp"
-                android:layout_marginLeft="1dp"
-                android:layout_marginRight="1dp"
-                android:layout_marginTop="1dp"
-                android:background="@color/white" />
-            <Button
-                android:id="@+id/buttonMR4Minus"
-                android:onClick="minusPenandaTL"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_gravity="right"
-                android:layout_marginBottom="0dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginRight="0dp"
-                android:layout_marginTop="0dp"
-                android:text="-"
-                android:background="@color/cardview_dark_background"
-                android:textColor="#ffffff" />
-            <Button
-                android:id="@+id/buttonMR4"
-                android:onClick="addPenandaTL"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_gravity="right"
-                android:layout_marginBottom="0dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginRight="0dp"
-                android:layout_marginTop="0dp"
-                android:text="+"
-                android:background="@color/cardview_dark_background"
-                android:textColor="#ffffff" />
         </TableRow>
     </TableLayout>
 

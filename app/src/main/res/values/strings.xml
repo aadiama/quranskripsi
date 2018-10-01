@@ -11,5 +11,30 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="about_text">
+        <![CDATA[
+            TANDA-TANDA PADA BAGIAN KHAT<br>
+            1. Blok warna pada background khat menandakan pembagian satu halaman menjadi 4 maqra` (1 maqra` =1/4 halaman<br>
+            2. khat berwarna biru di awal ayat merupakan tanda awal maqta` (1 maqta=1/8 halaman<br>
+            3. Setiap halaman terdiri atas 4 maqra` atau 8 maqta`<br><br>
+            KOLOM-KOLOM PENANDA TIKRAR<br>
+            1. Kolom Penanda Tilawah<br>
+            Kolom ini digunakan untuk menandai aktivitas tilawah harian untuk halaman tersebut.<br>
+            2. Kolom Penanda Tikrar<br>
+            Setiap selesai membaca satu maqta"'", tandai kolom maqta"'" satu kali (dalam aplikasi ditandai dengan simbol TR diatas surat).
+            Setelah satu maqta"'" penuh dengan jumlah 40, maka boleh pindah ke maqta"'" berikutnya.<br>
+            Setiap selesaii mengisi dua maqta"'" diteruskan dengan membaca satu maqra"'" (seperempat halaman) dengan mengisi kolom TM (Tilawah Maqra"'").<br>
+            Apabila proses tilawah sudah dua maqra"'" atau lebih, proses berikutnya adalah tilawah gabungan maqra"'" (TM 1-2, TM 2-3 dan seterusnya).<br>
+            Apabila kolom TM 1-4 sudah terisi penuh, berarti proses tikrar untuk halaman tersebut sudah selesai. Selanjutnya anda melakukan muraja"'"ah.<br>
+            3. Kolom Penanda Muraja"'"ah<br>
+            Kolom ini digunakan untuk muraja"'"ah atau setor hafalan. Membaca satu halaman tanpa melihat lagi khatnya. Kolom-kolom diisi lagi seperti tadi.
+            Ketika proses muraja"'"ah disarankan ada yang ikut mengontrol bacaan yang disetorkan.<br><br>
+            TERDAPAT BAGIAN-BAGIAN YANG BERFUNGSI MEMBANTU PARA PENGHAFAL<br>
+            1. Kata-kata kunci hafalan<br>
+            Kalimat pertama dan terakhir dari setiap maqta"'" yang diberi warna berbeda.<br>
+            2. Ayat-ayat yang mirip<br>
+            Potongan atau penggalan ayat-ayat yang bunyinya mirip dengan ayat-ayat yang ada pada halaman tersebut.<br>
+            3. Potongan awal ayat<br>
+        ]]>
+    </string>
 </resources>

@@ -72,16 +72,9 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.listSurah) {
             MainActivity.this.getSupportFragmentManager().beginTransaction().replace(R.id.main_container, SurahFragment.newInstance()).commit();
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        }
+        else if (id == R.id.help) {
+            MainActivity.this.getSupportFragmentManager().beginTransaction().replace(R.id.main_container, Help.newInstance()).commit();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
