@@ -29,42 +29,27 @@ public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.SurahViewHol
 
     }
 
-
     @Override
     public SurahAdapter.SurahViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_surah, parent, false);
         SurahAdapter.SurahViewHolder viewHolder = new SurahAdapter.SurahViewHolder(view);
-
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(SurahAdapter.SurahViewHolder holder, int position) {
-
         Surah surah = surahArrayList.get(position);
         holder.surah_idTextView.setText(Long.toString(surah.getId()) + ".");
         holder.translateTextView.setText(surah.getNameTranslate());
         holder.arabicTextView.setText(surah.getNameArabic());
-
-        if (position % 2 == 0) {
-//            holder.row_surah.setBackgroundColor(ContextCompat.getColor(context, R.color.mushaf3));
-
-        } else {
-//            holder.row_surah.setBackgroundColor(ContextCompat.getColor(context, R.color.mushaf2));
-        }
-
     }
 
     @Override
     public long getItemId(int position) {
-        //  Surah surah = surahArrayList.get(position);
-
         return surahArrayList.get(position).getId();
     }
 
     public Object getItem(int position) {
-
         return surahArrayList.get(position);
     }
 
@@ -81,9 +66,7 @@ public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.SurahViewHol
     public class SurahViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener//current clickListerner
     {
         public TextView translateTextView;
-
         public TextView surah_idTextView;
-
         public TextView arabicTextView;
         public RelativeLayout row_surah;
 
@@ -93,7 +76,6 @@ public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.SurahViewHol
             arabicTextView = view.findViewById(R.id.arabic_textView);
             surah_idTextView = view.findViewById(R.id.surah_idTextView);
             row_surah = view.findViewById(R.id.row_surah);
-
             view.setOnClickListener(this); //current clickListerner
         }
 
@@ -102,9 +84,7 @@ public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.SurahViewHol
             if (mItemClickListener != null) {
                 mItemClickListener.onItemClick(v, getLayoutPosition());
             }
-
         }
-
     }
 
     @Override
@@ -125,10 +105,8 @@ public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.SurahViewHol
                             filteredList.add(row);
                         }
                     }
-
                     surahArrayListFiltered = filteredList;
                 }
-
                 FilterResults filterResults = new FilterResults();
                 filterResults.values = surahArrayListFiltered;
                 return filterResults;
@@ -137,11 +115,9 @@ public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.SurahViewHol
             @Override
             protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
                 surahArrayListFiltered = (ArrayList<Surah>) filterResults.values;
-
                 // refresh the list with filtered data
                 notifyDataSetChanged();
             }
         };
     }
-
 }

@@ -1,6 +1,5 @@
 package com.example.adiama.quranskripsi;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -9,52 +8,34 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Handler;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.view.View;
 import android.view.WindowManager;
 import android.webkit.WebView;
-
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Map;
-
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.webkit.WebViewClient;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.SeekBar;
-import android.widget.TableLayout;
-import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class AyahWordActivity extends AppCompatActivity {
+public class AyahViewController extends AppCompatActivity {
     private ArrayList<Ayah> ayahArrayList;
     private ArrayList<QuranMaqtha> maqthaArrayList;
 
     public Long surah_no;
 
     Dialog dia;
-    int val1 = 0;
-    Long surah_id;
     DatabaseHelper dbHelper;
-    protected Cursor cursor;
     MediaPlayer m;
     SeekBar mSeekBar;
     Context c;
@@ -92,10 +73,8 @@ public class AyahWordActivity extends AppCompatActivity {
             strAyahNo = arabicNumber(strAyahNo);
             strAyahNo = "&nbsp;<img src='b"+curAyahNo+".png' width='30' height='30'/>&nbsp;";
 
-            //strAyahNo = "(" + String.valueOf(strAyahNo) + ")";
             String theAyah = currentX.getAyahArabic();
 
-            Long[] blueArray = new Long[50];
             Integer tIndex = 0;
             Integer lastTikrarAyah = 1;
 
@@ -129,28 +108,31 @@ public class AyahWordActivity extends AppCompatActivity {
         }
 
         WebView webView = (WebView) findViewById(R.id.webView1);
-        webView.loadDataWithBaseURL("file:///android_asset/", htmlFormat(myData), "text/html", "UTF-8", null);
+        webView.getSettings().setBuiltInZoomControls(true);
+        webView.loadDataWithBaseURL("file:///android_asset/", htmlFormat(myData),
+                "text/html", "UTF-8", null);
 
         btnPlay = (Button)findViewById(R.id.play);
         Button btnStop = (Button)findViewById(R.id.stop);
         mSeekBar = (SeekBar)findViewById(R.id.seekBar);
 
         c = getApplicationContext();
-        m = MediaPlayer.create(getApplicationContext(), getResources().getIdentifier("surah"+surah_no,"raw",getPackageName()));
+        m = MediaPlayer.create(getApplicationContext(), getResources().getIdentifier(
+                "surah"+surah_no,"raw",getPackageName()));
         mSeekBar.setMax(m.getDuration());
 
         //Register button click listener
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                playOm(btnPlay);
+                play(btnPlay);
             }
         });
 
         btnStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                stopOm(btnPlay);
+                stop(btnPlay);
             }
         });
 
@@ -209,9 +191,10 @@ public class AyahWordActivity extends AppCompatActivity {
     }
 
     //Play/Pause music
-    public void playOm(Button but){
+    public void play(Button but){
         if(m == null){
-            m = MediaPlayer.create(getApplicationContext(), getResources().getIdentifier("surah"+surah_no,"raw",getPackageName()));
+            m = MediaPlayer.create(getApplicationContext(), getResources().getIdentifier(
+                    "surah"+surah_no,"raw",getPackageName()));
         }
 
         if (isPlay == false) {
@@ -245,7 +228,7 @@ public class AyahWordActivity extends AppCompatActivity {
     }
 
     //Stop music play
-    public void stopOm(Button but1){
+    public void stop(Button but1){
         try {
             if(m != null){
                 Drawable top = getResources().getDrawable(R.drawable.play);
@@ -259,7 +242,6 @@ public class AyahWordActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
 
     public static String htmlFormat(String mainBody) {
         String html = "";
@@ -327,13 +309,13 @@ public class AyahWordActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.a) {
-            showDialogA();
+            showDialogTilawah();
         } else if (id == R.id.b) {
-            showDialogB();
+            showDialogTikrar();
         } else if (id == R.id.c) {
-            showDialogC();
+            showDialogMurajaah();
         } else if (id == R.id.d) {
-            showDialogD();
+            showDialogInformation();
         }
 
         return super.onOptionsItemSelected(item);
@@ -362,7 +344,8 @@ public class AyahWordActivity extends AppCompatActivity {
                 int ayahNo = Integer.parseInt(cursor.getString(2).toString());
                 int theTikrar = Integer.parseInt(cursor.getString(4).toString());
 
-                if(totalPartTM == 1 && theTM == theTikrar && ((rowIndex == 1 || rowIndex == 4 || rowIndex == 8 || rowIndex == 13))){
+                if(totalPartTM == 1 && theTM == theTikrar && ((rowIndex == 1 || rowIndex == 4 ||
+                        rowIndex == 8 || rowIndex == 13))){
                     if(i < cursor.getCount()-1){
                         cursor.moveToPosition(i+1);
                     }
@@ -428,19 +411,19 @@ public class AyahWordActivity extends AppCompatActivity {
 
     public void openDialogProcess(Dialog theDialog, String typePenanda){
         LayoutInflater li = theDialog.getLayoutInflater();
-        ViewGroup theLayout = (ViewGroup) li.inflate(R.layout.activity_table_dialog1, null);
+        ViewGroup theLayout = (ViewGroup) li.inflate(R.layout.table_dialog_tilawah, null);
         ViewGroup tableLayout = (ViewGroup) theLayout.findViewById(R.id.tableLayoutTL);
 
         if(typePenanda == "TL"){
-            theLayout = (ViewGroup) li.inflate(R.layout.activity_table_dialog1, null);
+            theLayout = (ViewGroup) li.inflate(R.layout.table_dialog_tilawah, null);
             tableLayout = (ViewGroup) theLayout.findViewById(R.id.tableLayoutTL);
         }
         else if(typePenanda == "TM"){
-            theLayout = (ViewGroup) li.inflate(R.layout.activity_table_dialog2, null);
+            theLayout = (ViewGroup) li.inflate(R.layout.table_dialog_tikrar, null);
             tableLayout = (ViewGroup) theLayout.findViewById(R.id.tableLayoutTM);
         }
         else if(typePenanda == "MR"){
-            theLayout = (ViewGroup) li.inflate(R.layout.activity_table_dialog3, null);
+            theLayout = (ViewGroup) li.inflate(R.layout.table_dialog_murajaah, null);
             tableLayout = (ViewGroup) theLayout.findViewById(R.id.tableLayoutMR);
         }
 
@@ -458,9 +441,10 @@ public class AyahWordActivity extends AppCompatActivity {
             }
         }
 
-        DatabaseHelper dbcenter = new DatabaseHelper(this);
-        SQLiteDatabase db = dbcenter.getReadableDatabase();
-        Cursor cursorTikrar = db.rawQuery("SELECT * FROM quran_maqtha WHERE surah_id = '"+surah_no+"' order by ayah_no asc",null);
+        DatabaseHelper dbHelper = new DatabaseHelper(this);
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor cursorTikrar = db.rawQuery("SELECT * FROM quran_maqtha WHERE surah_id = '"
+                +surah_no+"' order by ayah_no asc",null);
 
         int rowPBIndex = 1;
         int theTM = 1;
@@ -493,7 +477,8 @@ public class AyahWordActivity extends AppCompatActivity {
             rowPBIndex++;
         }
 
-        Cursor cursor = db.rawQuery("SELECT * FROM penanda_hafalan WHERE surah_no = '"+surah_no+"' and penanda_type = '"+typePenanda+"' order by row_index asc",null);
+        Cursor cursor = db.rawQuery("SELECT * FROM penanda_hafalan WHERE surah_no = '"
+                +surah_no+"' and penanda_type = '"+typePenanda+"' order by row_index asc",null);
 
         if(cursor.getCount() > 0){
             int rowIndex = 1;
@@ -527,9 +512,9 @@ public class AyahWordActivity extends AppCompatActivity {
         }
     }
 
-    public void showDialogA() {
-        dia = new Dialog(AyahWordActivity.this);
-        dia.setContentView(R.layout.activity_table_dialog1);
+    public void showDialogTilawah() {
+        dia = new Dialog(AyahViewController.this);
+        dia.setContentView(R.layout.table_dialog_tilawah);
         dia.setTitle("Penanda Tilawah");
         dia.setCancelable(true);
         WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
@@ -542,9 +527,9 @@ public class AyahWordActivity extends AppCompatActivity {
         openDialogProcess(dia,"TL");
     }
 
-    public void showDialogB() {
-        dia = new Dialog(AyahWordActivity.this);
-        dia.setContentView(R.layout.activity_table_dialog2);
+    public void showDialogTikrar() {
+        dia = new Dialog(AyahViewController.this);
+        dia.setContentView(R.layout.table_dialog_tikrar);
         dia.setTitle("Penanda Tikrar");
         dia.setCancelable(true);
         WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
@@ -557,9 +542,9 @@ public class AyahWordActivity extends AppCompatActivity {
         openDialogProcess(dia,"TM");
     }
 
-    public void showDialogC() {
-        dia = new Dialog(AyahWordActivity.this);
-        dia.setContentView(R.layout.activity_table_dialog3);
+    public void showDialogMurajaah() {
+        dia = new Dialog(AyahViewController.this);
+        dia.setContentView(R.layout.table_dialog_murajaah);
         dia.setTitle("Penanda Muraja'ah");
         dia.setCancelable(true);
         WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
@@ -572,13 +557,13 @@ public class AyahWordActivity extends AppCompatActivity {
         openDialogProcess(dia,"MR");
     }
 
-    public void showDialogD() {
+    public void showDialogInformation() {
         String myData = "<table border='1' style='border-collapse: collapse; width: 100%'>"+
                 "<thead><tr><th style='text-align: center;'>Kata-kata Kunci Hafalan</th></tr></thead>"+
                 "<tbody>";
 
-        DatabaseHelper dbcenter = new DatabaseHelper(this);
-        SQLiteDatabase db = dbcenter.getReadableDatabase();
+        DatabaseHelper dbHelper = new DatabaseHelper(this);
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM kata_kunci_hafalan WHERE surah_no = '"+surah_no+"'",null);
         for (int i = 0; i<cursor.getCount();i++) {
             cursor.moveToPosition(i);
@@ -606,8 +591,10 @@ public class AyahWordActivity extends AppCompatActivity {
 
             String ayahAsal = "<span style='color: blue'>" + cursor2.getString(5).toString() + "</span>";
             String ayahMirip = cursor2.getString(6).toString();
-            String surahAyahAsal = "<span style='font-size: 14px;'><b>(" + cursor2.getString(1).toString() + ":" + cursor2.getString(2).toString() + ")</b></span>";
-            String surahAyahMirip = "<span style='font-size: 14px'><b>(" + cursor2.getString(3).toString() + ":" + cursor2.getString(4).toString() + ")</b></span>";
+            String surahAyahAsal = "<span style='font-size: 14px;'><b>("
+                    + cursor2.getString(1).toString() + ":" + cursor2.getString(2).toString() + ")</b></span>";
+            String surahAyahMirip = "<span style='font-size: 14px'><b>("
+                    + cursor2.getString(3).toString() + ":" + cursor2.getString(4).toString() + ")</b></span>";
 
             myData2 += "<tr>";
             myData2 += "<td>";
@@ -623,7 +610,8 @@ public class AyahWordActivity extends AppCompatActivity {
 
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         WebView wv = new WebView(this);
-        wv.loadDataWithBaseURL("file:///android_asset/",htmlInformasi(myData),"text/html", "UTF-8", null);
+        wv.loadDataWithBaseURL("file:///android_asset/",htmlInformasi(myData),
+                "text/html", "UTF-8", null);
         wv.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -843,9 +831,10 @@ public class AyahWordActivity extends AppCompatActivity {
             }
         }
 
-        DatabaseHelper dbcenter = new DatabaseHelper(this);
-        SQLiteDatabase db = dbcenter.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM penanda_hafalan WHERE surah_no = '"+surah_no+"' and penanda_type = '"+penandaType+"'",null);
+        dbHelper = new DatabaseHelper(this);
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM penanda_hafalan WHERE surah_no = '"
+                +surah_no+"' and penanda_type = '"+penandaType+"'",null);
 
         int rowIndex = 1;
         for(ProgressBar pb : progressBarArrayList){
@@ -863,7 +852,6 @@ public class AyahWordActivity extends AppCompatActivity {
                         rowIndex + "','" +//row_index
                         pb.getProgress() + "')");//value
             }
-
             rowIndex++;
         }
 

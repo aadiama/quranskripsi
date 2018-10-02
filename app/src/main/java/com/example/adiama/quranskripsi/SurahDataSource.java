@@ -66,51 +66,8 @@ public class SurahDataSource {
             surah.setAyahNumber(cursor.getLong(cursor.getColumnIndex(SURAH_AYAH_NUMBER)));
             surahArrayList.add(surah);
             cursor.moveToNext();
-
         }
-        cursor.close();
-        db.close();
 
-        return surahArrayList;
-    }
-
-    public ArrayList<Surah> getBanglaSurahArrayList() {
-        long banglaStart = 28;
-
-        ArrayList<Surah> surahArrayList = new ArrayList<>();
-        SQLiteDatabase db = databaseHelper.getReadableDatabase();
-        cursor = db.rawQuery("SELECT surah_name._id,surah_name.name_arabic,surah_name.name_bangla,surah_name.ayah_number FROM surah_name", null);  //where surah_name._id >= " + banglaStart
-
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            Surah surah = new Surah();
-            surah.setId(cursor.getLong(cursor.getColumnIndex(SURAH_ID)));
-            surah.setNameArabic(cursor.getString(cursor.getColumnIndex(SURAH_NAME_ARABIC)));
-            surah.setNameTranslate(cursor.getString(cursor.getColumnIndex(SURAH_NAME_BANGLA)));
-            surah.setAyahNumber(cursor.getLong(cursor.getColumnIndex(SURAH_AYAH_NUMBER)));
-            surahArrayList.add(surah);
-            cursor.moveToNext();
-        }
-        cursor.close();
-        db.close();
-        return surahArrayList;
-    }
-
-    public ArrayList<Surah> getIndonesianSurahArrayList() {
-        ArrayList<Surah> surahArrayList = new ArrayList<>();
-        SQLiteDatabase db = databaseHelper.getReadableDatabase();
-        cursor = db.rawQuery("SELECT surah_name._id,surah_name.name_arabic,surah_name.arti_nama,surah_name.ayah_number FROM surah_name", null);
-
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            Surah surah = new Surah();
-            surah.setId(cursor.getLong(cursor.getColumnIndex(SURAH_ID)));
-            surah.setNameArabic(cursor.getString(cursor.getColumnIndex(SURAH_NAME_ARABIC)));
-            surah.setNameTranslate(cursor.getString(cursor.getColumnIndex(SURAH_ARTI_NAMA)));
-            surah.setAyahNumber(cursor.getLong(cursor.getColumnIndex(SURAH_AYAH_NUMBER)));
-            surahArrayList.add(surah);
-            cursor.moveToNext();
-        }
         cursor.close();
         db.close();
         return surahArrayList;

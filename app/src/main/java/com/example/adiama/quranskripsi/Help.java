@@ -23,8 +23,8 @@ private TextView mtextView;
         super.onCreate(savedInstanceState);
         View v = inflater.inflate(R.layout.fragment_help, container, false);
         return v;
-//        String defaultInputText = getResources().getString(R.string.about_text);
     }
+
     public void onViewCreated(View view, Bundle savedInstanceState) {
         mtextView = getView().findViewById(R.id.about_text_view);
         String aboutText = getString(R.string.about_text);

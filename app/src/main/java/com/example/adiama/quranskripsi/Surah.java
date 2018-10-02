@@ -2,12 +2,8 @@ package com.example.adiama.quranskripsi;
 
 public class Surah {
     private Long id;
-    private Long no;
-    private String nameEnglish;
     private String nameArabic;
     private String nameTranslate;
-
-    private String meanEnglish;
     private Long ayahNumber;
     private String type;
 
@@ -17,22 +13,6 @@ public class Surah {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getNo() {
-        return no;
-    }
-
-    public void setNo(Long no) {
-        this.no = no;
-    }
-
-    public String getNameEnglish() {
-        return nameEnglish;
-    }
-
-    public void setNameEnglish(String nameEnglish) {
-        this.nameEnglish = nameEnglish;
     }
 
     public String getNameArabic() {
@@ -49,14 +29,6 @@ public class Surah {
 
     public void setNameTranslate(String nameTranslate) {
         this.nameTranslate = nameTranslate;
-    }
-
-    public String getMeanEnglish() {
-        return meanEnglish;
-    }
-
-    public void setMeanEnglish(String meanEnglish) {
-        this.meanEnglish = meanEnglish;
     }
 
     public Long getAyahNumber() {

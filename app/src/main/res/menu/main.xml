@@ -19,6 +19,6 @@
     <item
         android:id="@+id/d"
         android:orderInCategory="4"
-        android:title="(?)"
+        android:title="(KK)"
         app:showAsAction="always" />
 </menu>
