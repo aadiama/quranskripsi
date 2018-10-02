@@ -8,6 +8,7 @@ import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 public class Help extends Fragment{
@@ -26,9 +27,10 @@ private TextView mtextView;
     }
 
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        mtextView = getView().findViewById(R.id.about_text_view);
-        String aboutText = getString(R.string.about_text);
-        Spanned result = Html.fromHtml(aboutText);
-        mtextView.setText(result);
+        String helpText = getString(R.string.help_text);
+        Spanned result = Html.fromHtml(helpText);
+
+        WebView webView= getView().findViewById(R.id.webViewHelp);
+        webView.loadDataWithBaseURL(null, helpText, "text/html", "utf-8",null);
     }
 }
