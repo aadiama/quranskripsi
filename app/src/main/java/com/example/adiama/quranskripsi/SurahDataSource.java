@@ -7,15 +7,12 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 
 public class SurahDataSource {
-    public final static String SURAH_TABLE_NAME = "surah_name";
     public final static String SURAH_ID = "_id";
     public final static String SURAH_ID_TAG = "surah_id";
-    public final static String SURAH_NO = "surah_no";
     public final static String SURAH_NAME_ARABIC = "name_arabic";
     public final static String SURAH_NAME_ENGLISH = "name_english";
     public final static String SURAH_NAME_TRANSLATE = "name_translate";
     public final static String SURAH_AYAH_NUMBER = "ayah_number";
-    public final static String SURAH_TYPE = "type";
     private static Cursor cursor;
     private DatabaseHelper databaseHelper;
 

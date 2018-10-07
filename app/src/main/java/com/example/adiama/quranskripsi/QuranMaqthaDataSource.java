@@ -6,7 +6,6 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 
 public class QuranMaqthaDataSource {
-    public final static String QURAN_MAQTHA_TABLE_NAME = "quran_maqtha";
     public final static String MAQTHA_ID = "_id";
     public final static String SURAH_ID = "surah_id";
     public final static String AYAH_NO = "ayah_no";

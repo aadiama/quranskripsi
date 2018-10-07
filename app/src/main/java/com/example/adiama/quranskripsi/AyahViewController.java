@@ -61,7 +61,7 @@ public class AyahViewController extends AppCompatActivity {
         ayahArrayList = getAyahArrayList(String.valueOf(surah_id));
         maqthaArrayList = getMaqthaArrayList(String.valueOf(surah_id));
 
-        String htmlText = "<html><body style=\"text-align:right; font-size: 24px\"> %s </body></Html>";
+        //String htmlText = "<html><body style=\"text-align:right; font-size: 24px\"> %s </body></Html>";
         String myData = "";
 
         Integer tikrarNo = 1;
@@ -70,7 +70,7 @@ public class AyahViewController extends AppCompatActivity {
             Long curAyahNo = currentX.getAyahNo();
             String strAyahNo = String.valueOf(curAyahNo);
 
-            strAyahNo = arabicNumber(strAyahNo);
+            //strAyahNo = arabicNumber(strAyahNo);
             strAyahNo = "&nbsp;<img src='b"+curAyahNo+".png' width='30' height='30'/>&nbsp;";
 
             String theAyah = currentX.getAyahArabic();
@@ -89,7 +89,7 @@ public class AyahViewController extends AppCompatActivity {
                     theAyah = theAyah.replace(theMaqtha, textReplace);
 
                     if (tIndex > 0 && tikrarNo != mTikrar) {
-                        lastTikrarAyah = ((int) (long) mAyahNo) - 1;
+                        //lastTikrarAyah = ((int) (long) mAyahNo) - 1;
                         tikrarNo++;
                     }
 
@@ -284,21 +284,6 @@ public class AyahViewController extends AppCompatActivity {
         return html;
     }
 
-    public String arabicNumber(String stdNumber) {
-        String val = stdNumber;
-        char[] arabicChars = {'٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'};
-        StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < val.length(); i++) {
-            if (Character.isDigit(val.charAt(i))) {
-                builder.append(arabicChars[(int) (val.charAt(i)) - 48]);
-            } else {
-                builder.append(val.charAt(i));
-            }
-        }
-
-        return builder.toString();
-    }
-
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.penanda, menu);
@@ -351,7 +336,7 @@ public class AyahViewController extends AppCompatActivity {
                     }
 
                     int ayahNoNext = Integer.parseInt(cursor.getString(2).toString());
-                    int theTikrarNext = Integer.parseInt(cursor.getString(4).toString());
+                    //int theTikrarNext = Integer.parseInt(cursor.getString(4).toString());
 
                     firstAyat = ayahNo;
                     lastAyat = (ayahNoNext-1);
@@ -367,7 +352,7 @@ public class AyahViewController extends AppCompatActivity {
                         }
 
                         int ayahNoNext = Integer.parseInt(cursor.getString(2).toString());
-                        int theTikrarNext = Integer.parseInt(cursor.getString(4).toString());
+                        //int theTikrarNext = Integer.parseInt(cursor.getString(4).toString());
 
                         firstAyat = ayahNo;
                         lastAyat = (ayahNoNext-1);
@@ -384,7 +369,7 @@ public class AyahViewController extends AppCompatActivity {
                         }
 
                         int ayahNoNext = Integer.parseInt(cursor.getString(2).toString());
-                        int theTikrarNext = Integer.parseInt(cursor.getString(4).toString());
+                        //int theTikrarNext = Integer.parseInt(cursor.getString(4).toString());
 
                         firstAyat = ayahNo;
                         lastAyat = (ayahNoNext-1);
@@ -486,9 +471,9 @@ public class AyahViewController extends AppCompatActivity {
             for(ProgressBar pb : progressBarArrayList){
                 for (int i = 0; i < cursor.getCount(); i++) {
                     cursor.moveToPosition(i);
-                    String cSurahNo = cursor.getString(1).toString();
+                    //String cSurahNo = cursor.getString(1).toString();
                     int cRowIndex = Integer.parseInt(cursor.getString(3).toString());
-                    String cPenandaType = cursor.getString(2).toString();
+                    //String cPenandaType = cursor.getString(2).toString();
                     int cPenandaValue = Integer.parseInt(cursor.getString(4).toString());
 
                     if(rowIndex == cRowIndex){
@@ -632,21 +617,17 @@ public class AyahViewController extends AppCompatActivity {
 
     public void minusPenandaTL(View v) {
         int buttonId = v.getId();
-        String buttonName = getResources().getResourceEntryName(buttonId);
 
         ViewGroup container = (ViewGroup) v.getParent();
 
         View textPenandaTL = container.getChildAt(container.indexOfChild(v)-2);
         int textPenandaTLId = textPenandaTL.getId();
-        String textPenandaTLName = getResources().getResourceEntryName(textPenandaTLId);
 
         View progressPenandaTL = container.getChildAt(container.indexOfChild(v)-1);
         int progressPenandaTLId = progressPenandaTL.getId();
-        String progressPenandaTLName = getResources().getResourceEntryName(progressPenandaTLId);
 
         final TextView penandaTL = (TextView) dia.findViewById(textPenandaTLId);
         int penandaTLLastValue = Integer.parseInt(String.valueOf(penandaTL.getText()));
-        //penandaTLLastValue = (penandaTLLastValue < 40 ? penandaTLLastValue-1 : 40);
         penandaTLLastValue = penandaTLLastValue-1;
 
         if(penandaTLLastValue < 0){
@@ -663,17 +644,14 @@ public class AyahViewController extends AppCompatActivity {
 
     public void addPenandaTL(View v) {
         int buttonId = v.getId();
-//        String buttonName = getResources().getResourceEntryName(buttonId);
 
         ViewGroup container = (ViewGroup) v.getParent();
 
         View textPenandaTL = container.getChildAt(container.indexOfChild(v)-3);
         int textPenandaTLId = textPenandaTL.getId();
-//        String textPenandaTLName = getResources().getResourceEntryName(textPenandaTLId);
 
         View progressPenandaTL = container.getChildAt(container.indexOfChild(v)-2);
         int progressPenandaTLId = progressPenandaTL.getId();
-//        String progressPenandaTLName = getResources().getResourceEntryName(progressPenandaTLId);
 
         final TextView penandaTL = (TextView) dia.findViewById(textPenandaTLId);
         int penandaTLLastValue = Integer.parseInt(String.valueOf(penandaTL.getText()));
@@ -688,21 +666,17 @@ public class AyahViewController extends AppCompatActivity {
 
     public void minusPenandaTLNew(View v) {
         int buttonId = v.getId();
-        String buttonName = getResources().getResourceEntryName(buttonId);
 
         ViewGroup container = (ViewGroup) v.getParent();
 
         View textPenandaTL = container.getChildAt(container.indexOfChild(v)-2);
         int textPenandaTLId = textPenandaTL.getId();
-        String textPenandaTLName = getResources().getResourceEntryName(textPenandaTLId);
 
         View progressPenandaTL = container.getChildAt(container.indexOfChild(v)-1);
         int progressPenandaTLId = progressPenandaTL.getId();
-        String progressPenandaTLName = getResources().getResourceEntryName(progressPenandaTLId);
 
         final TextView penandaTL = (TextView) dia.findViewById(textPenandaTLId);
         int penandaTLLastValue = Integer.parseInt(String.valueOf(penandaTL.getText()));
-//        penandaTLLastValue = (penandaTLLastValue < 120 ? penandaTLLastValue-1 : 120);
         penandaTLLastValue = penandaTLLastValue-1;
 
         if(penandaTLLastValue < 0){
@@ -713,24 +687,20 @@ public class AyahViewController extends AppCompatActivity {
 
         final ProgressBar progressTL = (ProgressBar) dia.findViewById(progressPenandaTLId);
         int progressTLLastValue = progressTL.getProgress();
-        //progressTLLastValue = (progressTLLastValue < 120 ? progressTLLastValue-1 : 120);
         progressTLLastValue = progressTLLastValue-1;
         progressTL.setProgress(progressTLLastValue);
     }
 
     public void addPenandaTLNew(View v) {
         int buttonId = v.getId();
-        String buttonName = getResources().getResourceEntryName(buttonId);
 
         ViewGroup container = (ViewGroup) v.getParent();
 
         View textPenandaTL = container.getChildAt(container.indexOfChild(v)-3);
         int textPenandaTLId = textPenandaTL.getId();
-        String textPenandaTLName = getResources().getResourceEntryName(textPenandaTLId);
 
         View progressPenandaTL = container.getChildAt(container.indexOfChild(v)-2);
         int progressPenandaTLId = progressPenandaTL.getId();
-        String progressPenandaTLName = getResources().getResourceEntryName(progressPenandaTLId);
 
         final TextView penandaTL = (TextView) dia.findViewById(textPenandaTLId);
         int penandaTLLastValue = Integer.parseInt(String.valueOf(penandaTL.getText()));
@@ -745,22 +715,16 @@ public class AyahViewController extends AppCompatActivity {
 
 
     public void minusPenandaTLBaru(View v) {
-        int buttonId = v.getId();
-        String buttonName = getResources().getResourceEntryName(buttonId);
-
         ViewGroup container = (ViewGroup) v.getParent();
 
         View textPenandaTL = container.getChildAt(container.indexOfChild(v)-2);
         int textPenandaTLId = textPenandaTL.getId();
-        String textPenandaTLName = getResources().getResourceEntryName(textPenandaTLId);
 
         View progressPenandaTL = container.getChildAt(container.indexOfChild(v)-1);
         int progressPenandaTLId = progressPenandaTL.getId();
-        String progressPenandaTLName = getResources().getResourceEntryName(progressPenandaTLId);
 
         final TextView penandaTL = (TextView) dia.findViewById(textPenandaTLId);
         int penandaTLLastValue = Integer.parseInt(String.valueOf(penandaTL.getText()));
-//        penandaTLLastValue = (penandaTLLastValue < 120 ? penandaTLLastValue-1 : 120);
         penandaTLLastValue = penandaTLLastValue-1;
 
         if(penandaTLLastValue < 0){
@@ -771,24 +735,20 @@ public class AyahViewController extends AppCompatActivity {
 
         final ProgressBar progressTL = (ProgressBar) dia.findViewById(progressPenandaTLId);
         int progressTLLastValue = progressTL.getProgress();
-//        progressTLLastValue = (progressTLLastValue < 120 ? progressTLLastValue-1 : 120);
         progressTLLastValue = progressTLLastValue-1;
         progressTL.setProgress(progressTLLastValue);
     }
 
     public void addPenandaTLBaru(View v) {
         int buttonId = v.getId();
-        String buttonName = getResources().getResourceEntryName(buttonId);
 
         ViewGroup container = (ViewGroup) v.getParent();
 
         View textPenandaTL = container.getChildAt(container.indexOfChild(v)-3);
         int textPenandaTLId = textPenandaTL.getId();
-        String textPenandaTLName = getResources().getResourceEntryName(textPenandaTLId);
 
         View progressPenandaTL = container.getChildAt(container.indexOfChild(v)-2);
         int progressPenandaTLId = progressPenandaTL.getId();
-        String progressPenandaTLName = getResources().getResourceEntryName(progressPenandaTLId);
 
         final TextView penandaTL = (TextView) dia.findViewById(textPenandaTLId);
         int penandaTLLastValue = Integer.parseInt(String.valueOf(penandaTL.getText()));

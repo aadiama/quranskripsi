@@ -22,8 +22,6 @@ import java.util.ArrayList;
 
 public class SurahFragment extends Fragment {
 
-
-    static String lang;
     private ArrayList<Surah> surahArrayList;
     private RecyclerView mRecyclerView;
     private SurahAdapter surahAdapter;
@@ -81,7 +79,7 @@ public class SurahFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_surah, container, false);
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_surah_view);
+        mRecyclerView = view.findViewById(R.id.recycler_surah_view);
         surahAdapter = new SurahAdapter(surahArrayList, getActivity());
         return view;
     }
