@@ -51,8 +51,8 @@ public class SurahFragment extends Fragment {
         inflater.inflate(R.menu.menu_bar, menu);
         super.onCreateOptionsMenu(menu,inflater);
 
-        MenuItem searchIem = menu.findItem(R.id.search);
-        final SearchView searchView = (SearchView) searchIem.getActionView();
+        MenuItem searchItem = menu.findItem(R.id.search);
+        final SearchView searchView = (SearchView) searchItem.getActionView();
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override

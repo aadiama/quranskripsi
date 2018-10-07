@@ -14,9 +14,6 @@ public class SurahDataSource {
     public final static String SURAH_NAME_ARABIC = "name_arabic";
     public final static String SURAH_NAME_ENGLISH = "name_english";
     public final static String SURAH_NAME_TRANSLATE = "name_translate";
-    public final static String SURAH_NAME_BANGLA = "name_bangla";
-    public final static String SURAH_MEAN_ENGLISH = "surah_mean_english";
-    public final static String SURAH_ARTI_NAMA = "arti_nama";
     public final static String SURAH_AYAH_NUMBER = "ayah_number";
     public final static String SURAH_TYPE = "type";
     private static Cursor cursor;

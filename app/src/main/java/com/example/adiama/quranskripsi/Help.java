@@ -12,7 +12,6 @@ import android.webkit.WebView;
 import android.widget.TextView;
 
 public class Help extends Fragment{
-private TextView mtextView;
 
     public static Help newInstance() {
         Help help = new Help();
@@ -28,7 +27,7 @@ private TextView mtextView;
 
     public void onViewCreated(View view, Bundle savedInstanceState) {
         String helpText = getString(R.string.help_text);
-        Spanned result = Html.fromHtml(helpText);
+//        Spanned result = Html.fromHtml(helpText);
 
         WebView webView= getView().findViewById(R.id.webViewHelp);
         webView.loadDataWithBaseURL(null, helpText, "text/html", "utf-8",null);

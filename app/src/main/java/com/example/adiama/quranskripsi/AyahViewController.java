@@ -254,7 +254,7 @@ public class AyahViewController extends AppCompatActivity {
                 "<style>@font-face {font-family: 'Roboto'; src: url('file:///android_asset/Roboto-Regular.ttf');}</style>" +
                 "<title>" +
                 "</title>" +
-                "<link href='main.css' rel='stylesheet' type='text/css' />" +
+                "<link href='penanda.css' rel='stylesheet' type='text/css' />" +
                 "</head>" +
                 "<body>" +
                 bimillahDiv +
@@ -274,7 +274,7 @@ public class AyahViewController extends AppCompatActivity {
                 "<style>@font-face {font-family: 'Roboto'; src: url('file:///android_asset/Roboto-Regular.ttf');}</style>" +
                 "<title>" +
                 "</title>" +
-                "<link href='main.css' rel='stylesheet' type='text/css' />" +
+                "<link href='penanda.css' rel='stylesheet' type='text/css' />" +
                 "</head>" +
                 "<body style='font-size: 20px'>" +
                 mainBody +
@@ -301,7 +301,7 @@ public class AyahViewController extends AppCompatActivity {
 
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.penanda, menu);
         return true;
     }
 
@@ -663,17 +663,17 @@ public class AyahViewController extends AppCompatActivity {
 
     public void addPenandaTL(View v) {
         int buttonId = v.getId();
-        String buttonName = getResources().getResourceEntryName(buttonId);
+//        String buttonName = getResources().getResourceEntryName(buttonId);
 
         ViewGroup container = (ViewGroup) v.getParent();
 
         View textPenandaTL = container.getChildAt(container.indexOfChild(v)-3);
         int textPenandaTLId = textPenandaTL.getId();
-        String textPenandaTLName = getResources().getResourceEntryName(textPenandaTLId);
+//        String textPenandaTLName = getResources().getResourceEntryName(textPenandaTLId);
 
         View progressPenandaTL = container.getChildAt(container.indexOfChild(v)-2);
         int progressPenandaTLId = progressPenandaTL.getId();
-        String progressPenandaTLName = getResources().getResourceEntryName(progressPenandaTLId);
+//        String progressPenandaTLName = getResources().getResourceEntryName(progressPenandaTLId);
 
         final TextView penandaTL = (TextView) dia.findViewById(textPenandaTLId);
         int penandaTLLastValue = Integer.parseInt(String.valueOf(penandaTL.getText()));
