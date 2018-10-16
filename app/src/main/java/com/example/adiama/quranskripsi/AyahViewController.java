@@ -76,7 +76,7 @@ public class AyahViewController extends AppCompatActivity {
             String theAyah = currentX.getAyahArabic();
 
             Integer tIndex = 0;
-            Integer lastTikrarAyah = 1;
+//            Integer lastTikrarAyah = 1;
 
             for (QuranMaqtha tMaqtha : maqthaArrayList) {
                 Long mSurahId = tMaqtha.getSurahId();

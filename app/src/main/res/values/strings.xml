@@ -11,11 +11,17 @@
 
     <string name="help_text">
         <![CDATA[
+            <h3>PETUNJUK MENGGUNAKAN AL-QURAN TIKRAR</h3>
+            <ul>
+            <li>Pahami tanda-tanda yang terdapat pada khat</li>
+            <li>Lakukan pengisian kolom penanda tilawah dengan benar sesuai petunjuk</li>
+            </ul>
             <h3>TANDA-TANDA PADA BAGIAN KHAT</h3>
             <ol>
-            <li>Blok warna pada background khat menandakan pembagian satu halaman menjadi 4 maqra` (1 maqra` =1/4 halaman.</li>
+            <li>Blok warna pada background khat menandakan pembagian satu halaman menjadi 4 maqra`
+            (1 maqra` =1/4 halaman.</li>
             <li>khat berwarna biru di awal ayat merupakan tanda awal maqta` (1 maqta=1/8 halaman.</li>
-            <li>Setiap halaman terdiri atas 4 maqra` atau 8 maqta`.</li>
+            <li>Setiap halaman terdiri atas 4 maqra` atau 8 maqta`. Satu maqta` bisa terdiri dari satu ayat atau lebih.</li>
             </ol>
             <h3>KOLOM-KOLOM PENANDA TIKRAR</h3>
             <ol>
@@ -23,22 +29,30 @@
             <p>Kolom ini digunakan untuk menandai aktivitas tilawah harian untuk halaman tersebut.</p>
             <li><b>Kolom Penanda Tikrar</b></li><br>
             <ul>
-            <li>Setiap selesai membaca satu maqta"'", tandai kolom maqta"'" satu kali (dalam aplikasi ditandai dengan simbol TR diatas surat).</li>
+            <li>Setiap selesai membaca satu maqta"'", tandai kolom maqta"'" satu kali
+            (dalam aplikasi ditandai dengan simbol TL di bagian atas surat).</li>
             <li>Setelah satu maqta"'" penuh dengan jumlah 40, maka boleh pindah ke maqta"'" berikutnya.</li>
-            <li>Setiap selesaii mengisi dua maqta"'" diteruskan dengan membaca satu maqra"'" (seperempat halaman) dengan mengisi kolom TM (Tilawah Maqra"'").</li>
-            <li>Apabila proses tilawah sudah dua maqra"'" atau lebih, proses berikutnya adalah tilawah gabungan maqra"'" (TM 1-2, TM 2-3 dan seterusnya).</li>
-            <li>Apabila kolom TM 1-4 sudah terisi penuh, berarti proses tikrar untuk halaman tersebut sudah selesai. Selanjutnya anda melakukan muraja"'"ah.</li>
+            <li>Setiap selesaii mengisi dua maqta"'" diteruskan dengan membaca satu maqra"'"
+            (seperempat halaman) dengan mengisi kolom TM (Tilawah Maqra"'").</li>
+            <li>Apabila proses tilawah sudah dua maqra"'" atau lebih, proses berikutnya adalah
+            tilawah gabungan maqra"'" (TM 1-2, TM 2-3 dan seterusnya).</li>
+            <li>Apabila kolom TM 1-4 sudah terisi penuh, berarti proses tikrar untuk halaman
+            tersebut sudah selesai. Selanjutnya anda melakukan muraja"'"ah.</li>
             </ul><br>
             <li><b>Kolom Penanda Muraja"'"ah</b></li>
-            <p>Kolom ini digunakan untuk muraja"'"ah atau setor hafalan. Membaca satu halaman tanpa melihat lagi khatnya. Kolom-kolom diisi lagi seperti tadi.<p/>
+            <p>Kolom ini digunakan untuk muraja"'"ah atau setor hafalan. Membaca satu halaman tanpa
+            melihat lagi khatnya. Kolom-kolom diisi lagi seperti tadi.<p/>
             </ol>
+            <h3>CARA PENGISIAN KOLOM-KOLOM PENANDA</h3>
+            <img src=\"file:///android_res/drawable/penanda.jpg\" height=\"100px\" width=\"300px\"/>
+            <p> Untuk menambah penanda dengan cara menekan tombol "+" dan "-" untuk mengurangi jumlah penanda.
+            Kemudian tekan simpan untuk menyimpan.</p>
             <h3>TERDAPAT BAGIAN-BAGIAN YANG BERFUNGSI MEMBANTU PARA PENGHAFAL</h3>
             <ol>
             <li><b>Kata-kata kunci hafalan</b></li>
             <p>Kalimat pertama dan terakhir dari setiap maqta"'" yang diberi warna berbeda.</p>
             <li><b>Ayat-ayat yang mirip</b></li>
             <p>Potongan atau penggalan ayat-ayat yang bunyinya mirip dengan ayat-ayat yang ada pada halaman tersebut.</p>
-            <li><b>Potongan awal ayat</b></li>
             </ol>
         ]]>
     </string>
