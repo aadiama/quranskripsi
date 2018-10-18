@@ -28,7 +28,6 @@ public class SurahFragment extends Fragment {
     private RecyclerView.LayoutManager mLayoutManager;
 
     public SurahFragment() {
-        // Required empty public constructor
     }
 
     public static SurahFragment newInstance() {
@@ -65,7 +64,7 @@ public class SurahFragment extends Fragment {
 
             @Override
             public boolean onQueryTextChange(String query) {
-                ArrayList<Surah> surahArrayListByName = new ArrayList<Surah>();
+                ArrayList<Surah> surahArrayListByName;
                 surahArrayListByName = getSurahArrayListByName(query);
                 surahArrayList.clear();
                 surahArrayList.addAll(surahArrayListByName);
@@ -121,14 +120,14 @@ public class SurahFragment extends Fragment {
     }
 
     private ArrayList<Surah> getSurahArrayList() {
-        ArrayList<Surah> surahArrayList = new ArrayList<Surah>();
+        ArrayList<Surah> surahArrayList;
         SurahDataSource surahDataSource = new SurahDataSource(getActivity());
                 surahArrayList = surahDataSource.getEnglishSurahArrayList();
         return surahArrayList;
     }
 
     private ArrayList<Surah> getSurahArrayListByName(String query) {
-        ArrayList<Surah> surahArrayList = new ArrayList<Surah>();
+        ArrayList<Surah> surahArrayList;
         SurahDataSource surahDataSource = new SurahDataSource(getActivity());
         surahArrayList = surahDataSource.getEnglishSurahArrayListByName(query);
         return surahArrayList;

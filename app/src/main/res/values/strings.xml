@@ -26,9 +26,11 @@
             <h3>KOLOM-KOLOM PENANDA TIKRAR</h3>
             <ol>
             <li><b>Kolom Penanda Tilawah</b></li>
-            <p>Kolom ini digunakan untuk menandai aktivitas tilawah harian untuk halaman tersebut.</p>
+            <p>Kolom penanda tilawah pada aplikasi ini dilambangkan dengan "TL" pada menu diatas halaman surat.
+            Kolom ini digunakan untuk menandai aktivitas tilawah harian untuk halaman tersebut.</p>
             <li><b>Kolom Penanda Tikrar</b></li><br>
             <ul>
+            <li>Kolom penanda tikrar pada aplikasi ini dilambangkan dengan "TM" pada menu diatas halaman surat.</li>
             <li>Setiap selesai membaca satu maqta"'", tandai kolom maqta"'" satu kali
             (dalam aplikasi ditandai dengan simbol TL di bagian atas surat).</li>
             <li>Setelah satu maqta"'" penuh dengan jumlah 40, maka boleh pindah ke maqta"'" berikutnya.</li>
@@ -40,7 +42,8 @@
             tersebut sudah selesai. Selanjutnya anda melakukan muraja"'"ah.</li>
             </ul><br>
             <li><b>Kolom Penanda Muraja"'"ah</b></li>
-            <p>Kolom ini digunakan untuk muraja"'"ah atau setor hafalan. Membaca satu halaman tanpa
+            <p>Kolom penanda tikrar pada aplikasi ini dilambangkan dengan "MR" pada menu diatas halaman surat.
+            Kolom ini digunakan untuk muraja"'"ah atau setor hafalan. Membaca satu halaman tanpa
             melihat lagi khatnya. Kolom-kolom diisi lagi seperti tadi.<p/>
             </ol>
             <h3>CARA PENGISIAN KOLOM-KOLOM PENANDA</h3>

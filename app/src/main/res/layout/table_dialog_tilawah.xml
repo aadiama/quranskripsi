@@ -79,7 +79,7 @@
 
             <Button
                 android:id="@+id/buttonTL1Minus"
-                android:onClick="minusPenandaTLNew"
+                android:onClick="minusPenandaTilawah"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_gravity="right"
@@ -92,7 +92,7 @@
                 android:textColor="#ffffff" />
             <Button
                 android:id="@+id/buttonTL1"
-                android:onClick="addPenandaTLNew"
+                android:onClick="addPenandaTilawah"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_gravity="right"
