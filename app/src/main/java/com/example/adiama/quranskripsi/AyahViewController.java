@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.Drawable;
@@ -50,6 +51,7 @@ public class AyahViewController extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ayah_activity);
 
+
         Bundle bundle = getIntent().getExtras();
         String title = bundle.getString("surah_name");
         title = title.replace("Surah ", "");
@@ -67,9 +69,9 @@ public class AyahViewController extends AppCompatActivity {
         for (Ayah currentX : ayahArrayList) {
             Long curSurahId = currentX.getSurahId();
             Long curAyahNo = currentX.getAyahNo();
-            String strAyahNo = String.valueOf(curAyahNo);
+            String strAyahNo;
 
-            strAyahNo = "&nbsp;<img src='b"+curAyahNo+".png' width='30' height='30'/>&nbsp;";
+            strAyahNo = "&nbsp;<img src='b" + curAyahNo + ".png' width='30' height='30'/>&nbsp;";
             String theAyah = currentX.getAyahArabic();
             Integer tIndex = 0;
 
@@ -101,10 +103,11 @@ public class AyahViewController extends AppCompatActivity {
             myData += theAyah + strAyahNo;
         }
 
-        WebView webView = (WebView) findViewById(R.id.webView1);
+        WebView webView = findViewById(R.id.webView1);
         webView.getSettings().setBuiltInZoomControls(true);
         webView.loadDataWithBaseURL("file:///android_asset/", htmlFormat(myData),
                 "text/html", "UTF-8", null);
+
 
         btnPlay = findViewById(R.id.play);
         Button btnStop = findViewById(R.id.stop);
@@ -112,7 +115,7 @@ public class AyahViewController extends AppCompatActivity {
 
         c = getApplicationContext();
         m = MediaPlayer.create(getApplicationContext(), getResources().getIdentifier(
-                "surah"+surah_no,"raw",getPackageName()));
+                "surah" + surah_no, "raw", getPackageName()));
         mSeekBar.setMax(m.getDuration());
 
         //Register button click listener
@@ -131,12 +134,15 @@ public class AyahViewController extends AppCompatActivity {
         });
 
         mSeekBar.setOnTouchListener(new OnTouchListener() {
-            @Override public boolean onTouch(View v, MotionEvent event) {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
                 seekChange(v);
-            return false;
+                return false;
             }
         });
     }
+
+
 
     @Override
     public void onBackPressed(){
@@ -554,7 +560,6 @@ public class AyahViewController extends AppCompatActivity {
 
         myData += "</tbody>";
         myData += "</table>";
-
         myData += "<br/>";
 
         String myData2 = "<table border='1' style='border-collapse: collapse; width: 100%'>"+

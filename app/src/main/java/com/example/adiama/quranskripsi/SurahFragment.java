@@ -38,7 +38,6 @@ public class SurahFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
         surahArrayList = getSurahArrayList();
         setHasOptionsMenu(true);
     }
@@ -54,7 +53,7 @@ public class SurahFragment extends Fragment {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                ArrayList<Surah> surahArrayListByName = new ArrayList<Surah>();
+                ArrayList<Surah> surahArrayListByName;
                 surahArrayListByName = getSurahArrayListByName(query);
                 surahArrayList.clear();
                 surahArrayList.addAll(surahArrayListByName);

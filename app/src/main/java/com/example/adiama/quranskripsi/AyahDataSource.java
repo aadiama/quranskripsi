@@ -4,27 +4,28 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
+import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 
 public class AyahDataSource {
-    public final static String AYAH_TABLE_NAME = "quran";
     public final static String AYAH_ID = "_id";
     public final static String SURAH_ID = "surah_id";
     public final static String AYAH_NO = "verse_id";
     public final static String AYAH_ARABIC = "arabic";
     private static Cursor cursor;
-    private DatabaseHelper databaseHelper;
+    private DatabaseHelper dbHelper;
 
     public AyahDataSource(Context context) {
-        databaseHelper = new DatabaseHelper(context);
+        dbHelper = new DatabaseHelper(context);
     }
 
     public ArrayList<Ayah> getAyahArrayList(String surah_id_param) {
         String[] params = new String[]{ surah_id_param };
 
         ArrayList<Ayah> ayahArrayList = new ArrayList<>();
-        SQLiteDatabase db = databaseHelper.getReadableDatabase();
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
         cursor = db.rawQuery("SELECT quran._id,quran.surah_id," +
                 "quran.verse_id,quran.arabic FROM quran WHERE surah_id = ?", params);
 
@@ -45,4 +46,5 @@ public class AyahDataSource {
 
         return ayahArrayList;
     }
+
 }
