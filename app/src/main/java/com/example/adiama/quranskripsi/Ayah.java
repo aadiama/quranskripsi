@@ -33,4 +33,5 @@ public class Ayah {
     public void setAyahArabic(String ayahArabic) {
         this.ayahArabic = ayahArabic;
     }
+
 }

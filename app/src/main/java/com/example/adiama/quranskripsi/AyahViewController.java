@@ -69,9 +69,10 @@ public class AyahViewController extends AppCompatActivity {
         for (Ayah currentX : ayahArrayList) {
             Long curSurahId = currentX.getSurahId();
             Long curAyahNo = currentX.getAyahNo();
-            String strAyahNo;
 
+            String strAyahNo;
             strAyahNo = "&nbsp;<img src='b" + curAyahNo + ".png' width='30' height='30'/>&nbsp;";
+
             String theAyah = currentX.getAyahArabic();
             Integer tIndex = 0;
 
@@ -95,7 +96,7 @@ public class AyahViewController extends AppCompatActivity {
                 tIndex++;
             }
 
-            if (tikrarNo == 1 || tikrarNo == 3) {
+            if (tikrarNo == 2 || tikrarNo == 4) {
                 strAyahNo = "<span style='background-color: #e8edff'>" + strAyahNo + "</span>";
                 theAyah = "<span style='background-color: #e8edff'>" + theAyah + "</span>";
             }
@@ -191,15 +192,13 @@ public class AyahViewController extends AppCompatActivity {
     }
 
     //Play/Pause music
-    public void play(Button but){
-        if(m == null){
-            m = MediaPlayer.create(getApplicationContext(), getResources().getIdentifier(
+    public void play(Button button){
+        m = MediaPlayer.create(getApplicationContext(), getResources().getIdentifier(
                     "surah"+surah_no,"raw",getPackageName()));
-        }
 
         if (isPlay == false) {
             Drawable top = getResources().getDrawable(R.drawable.pause);
-            btnPlay.setCompoundDrawablesWithIntrinsicBounds(null, top , null, null);
+            button.setCompoundDrawablesWithIntrinsicBounds(null, top , null, null);
 
             try{
                 isPlay = true;
@@ -218,7 +217,7 @@ public class AyahViewController extends AppCompatActivity {
             }
         }else {
             Drawable top = getResources().getDrawable(R.drawable.play);
-            btnPlay.setCompoundDrawablesWithIntrinsicBounds(null, top , null, null);
+            button.setCompoundDrawablesWithIntrinsicBounds(null, top , null, null);
             isPlay = false;
 
             if(m != null){
@@ -391,7 +390,7 @@ public class AyahViewController extends AppCompatActivity {
         textTikrar.setText(theText);
     }
 
-//    fungsi untu
+//    fungsi untuk menampilkan dialog
     public void openDialogProcess(Dialog theDialog, String typePenanda){
 
         ArrayList<ProgressBar> progressBarArrayList = new ArrayList<>();
@@ -412,9 +411,11 @@ public class AyahViewController extends AppCompatActivity {
             theLayout = (ViewGroup) li.inflate(R.layout.table_dialog_murajaah, null);
             tableLayout = theLayout.findViewById(R.id.tableLayoutMR);
         }
+        //mengambil semua data pada table layout
         for (int i = 0; i < tableLayout.getChildCount(); i++){
             ViewGroup tableRow = (ViewGroup) tableLayout.getChildAt(i);
 
+            //mengambil semua data pada progressBar
             for(int j = 0; j < tableRow.getChildCount(); j++){
                 if (tableRow.getChildAt(j) instanceof ProgressBar){
                     ProgressBar theProgressBar = (ProgressBar) tableRow.getChildAt(j);
@@ -430,6 +431,7 @@ public class AyahViewController extends AppCompatActivity {
         Cursor cursorTikrar = db.rawQuery("SELECT * FROM quran_maqtha WHERE surah_id = '"
                 +surah_no+"' order by ayah_no asc",null);
 
+        //set TM masing2 ayat pada dialog
         int rowPBIndex = 1;
         int theTM = 1;
         for(ProgressBar pb : progressBarArrayList){
@@ -449,6 +451,7 @@ public class AyahViewController extends AppCompatActivity {
             View thePBView = dia.findViewById(pb.getId());
             ViewGroup thePBParent = (ViewGroup) thePBView.getParent();
 
+            //menampilkan nomor ayat pada dialog
             if(typePenanda == "TM" && (rowPBIndex == 1 || rowPBIndex == 2 || rowPBIndex == 4 || rowPBIndex == 5
                     || rowPBIndex == 8 || rowPBIndex == 9 || rowPBIndex == 13 || rowPBIndex == 14)){
 
@@ -463,6 +466,7 @@ public class AyahViewController extends AppCompatActivity {
         Cursor cursor = db.rawQuery("SELECT * FROM penanda_hafalan WHERE surah_no = '"
                 +surah_no+"' and penanda_type = '"+typePenanda+"' order by row_index asc",null);
 
+    //mengisi value pada progress bar
         if(cursor.getCount() > 0){
             int rowIndex = 1;
 
@@ -509,6 +513,7 @@ public class AyahViewController extends AppCompatActivity {
         openDialogProcess(dia,"TL");
     }
 
+    //menampilkan dialog tikrar
     public void showDialogTikrar() {
         dia = new Dialog(AyahViewController.this);
         dia.setContentView(R.layout.table_dialog_tikrar);
@@ -539,6 +544,7 @@ public class AyahViewController extends AppCompatActivity {
         openDialogProcess(dia,"MR");
     }
 
+    //menampilkan dialog information
     public void showDialogInformation() {
         String myData = "<table border='1' style='border-collapse: collapse; width: 100%'>"+
                 "<thead><tr><th style='text-align: center;'>Kata-kata Kunci Hafalan</th></tr></thead>"+
@@ -611,6 +617,7 @@ public class AyahViewController extends AppCompatActivity {
         alert.show();
     }
 
+    //controller button minus penanda tikrar
     public void minusPenandaTikrar(View v) {
 
         ViewGroup container = (ViewGroup) v.getParent();
@@ -637,14 +644,15 @@ public class AyahViewController extends AppCompatActivity {
         progressTL.setProgress(progressTLLastValue);
     }
 
+    //controller button add penanda tikrar
     public void addPenandaTikrar(View v) {
 
         ViewGroup container = (ViewGroup) v.getParent();
 
-        View textPenandaTL = container.getChildAt(container.indexOfChild(v)-3);
+        View textPenandaTL = container.getChildAt(1);
         int textPenandaTLId = textPenandaTL.getId();
 
-        View progressPenandaTL = container.getChildAt(container.indexOfChild(v)-2);
+        View progressPenandaTL = container.getChildAt(2);
         int progressPenandaTLId = progressPenandaTL.getId();
 
         final TextView penandaTL = dia.findViewById(textPenandaTLId);
@@ -750,7 +758,7 @@ public class AyahViewController extends AppCompatActivity {
         progressTL.setProgress(progressTLLastValue);
     }
 
-//    fungsi untuk menyimpan penanda ke database
+//    menyimpan penanda ke database
     public void saveFunction(View v) {
         String penandaType = "TL";
 

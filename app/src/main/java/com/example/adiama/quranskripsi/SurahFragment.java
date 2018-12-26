@@ -68,7 +68,6 @@ public class SurahFragment extends Fragment {
                 surahArrayList.clear();
                 surahArrayList.addAll(surahArrayListByName);
                 surahAdapter.notifyDataSetChanged();
-
                 return false;
             }
         });

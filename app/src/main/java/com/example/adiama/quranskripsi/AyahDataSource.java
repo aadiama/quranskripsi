@@ -3,6 +3,7 @@ package com.example.adiama.quranskripsi;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.MediaPlayer;
 import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
